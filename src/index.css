@@ -1,0 +1,1412 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #062530;
+  background-color: #faf9f6;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body, #root {
+  margin: 0;
+  min-height: 100%;
+  width: 100%;
+}
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img, svg, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Hide any legacy in-page chrome that slipped through (safety net) */
+[data-name='Footer'],
+[data-name='Header'] {
+  display: none !important;
+}
+
+/* ============================================================
+   SCROLL REVEAL ANIMATIONS (applied via ScrollRevealProvider)
+   ============================================================ */
+
+/* Base hidden state before coming into view */
+main [data-reveal],
+section[data-reveal] {
+  opacity: 0;
+  transform: translateY(32px);
+  will-change: opacity, transform;
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* In-view state */
+main [data-reveal].is-visible,
+section[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered delays (children of revealed sections) */
+main [data-reveal][data-delay='100'] { transition-delay: 0.1s; }
+main [data-reveal][data-delay='200'] { transition-delay: 0.2s; }
+main [data-reveal][data-delay='300'] { transition-delay: 0.3s; }
+main [data-reveal][data-delay='400'] { transition-delay: 0.4s; }
+main [data-reveal][data-delay='500'] { transition-delay: 0.5s; }
+main [data-reveal][data-delay='600'] { transition-delay: 0.6s; }
+
+/* Reduced motion: skip animations */
+@media (prefers-reduced-motion: reduce) {
+  main [data-reveal],
+  section[data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ============================================================
+   TEXT BOUNDARY ENFORCEMENT
+   Ensures every text element respects section 20px padding
+   on screens <768px regardless of fixed widths / shrink-0
+   ============================================================ */
+
+@media (max-width: 767px) {
+  main p,
+  main h1,
+  main h2,
+  main h3,
+  main h4,
+  main span,
+  main li,
+  main blockquote,
+  main [class*='text-\\['],
+  main [class*='whitespace-nowrap'],
+  main [class*='shrink-0'][class*='w-\\['] {
+    max-width: 100% !important;
+    width: auto !important;
+    flex-shrink: 1 !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+
+  /* Specific text container widths that exceed viewport */
+  main [class*='w-\\[226px\\]'],
+  main [class*='w-\\[260px\\]'],
+  main [class*='w-\\[300px\\]'],
+  main [class*='w-\\[320px\\]'],
+  main [class*='w-\\[360px\\]'],
+  main [class*='w-\\[400px\\]'],
+  main [class*='w-\\[413px\\]'],
+  main [class*='w-\\[420px\\]'],
+  main [class*='w-\\[460px\\]'],
+  main [class*='w-\\[480px\\]'],
+  main [class*='w-\\[500px\\]'],
+  main [class*='w-\\[520px\\]'],
+  main [class*='w-\\[560px\\]'],
+  main [class*='w-\\[564px\\]'],
+  main [class*='w-\\[600px\\]'],
+  main [class*='w-\\[608px\\]'],
+  main [class*='w-\\[640px\\]'],
+  main [class*='w-\\[680px\\]'],
+  main [class*='w-\\[712px\\]'],
+  main [class*='w-\\[720px\\]'] {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    flex-shrink: 1 !important;
+  }
+
+  /* Generic text container / hero right illustration must not push content */
+  main [data-name='Hero left'],
+  main [data-name='Hero grid'],
+  main [data-name='FAQ layout'],
+  main [data-name='mv'],
+  main [data-name='body grid'],
+  main [data-name='Legal layout'],
+  main [data-name='Referral card'],
+  main [data-name='QC card'] {
+    min-width: 0 !important;
+  }
+
+  /* Illustrations: 100% max-width so they stay inside padding */
+  main [data-name='Hero right'],
+  main [data-name='Hero illustration'],
+  main [data-name='Illustration panel'],
+  main [data-name='Illustration frame'],
+  main [data-name='Device frame'] {
+    max-width: 100% !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+}
+
+/* Even more aggressive for <640px */
+@media (max-width: 639px) {
+  main *,
+  main *::before,
+  main *::after {
+    max-width: 100% !important;
+  }
+  main .flex,
+  main .flex-row {
+    min-width: 0 !important;
+  }
+  main [class*='shrink-0']:not(img):not(svg):not([data-name='material-symbols-light:check']):not([data-name='material-symbols:check']):not([data-name='file-text']):not([data-name='shield-check']) {
+    flex-shrink: 1 !important;
+  }
+}
+
+/* --------- Responsive section padding utilities ---------- */
+.sec-padding {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+@media (min-width: 640px) { .sec-padding { padding-left: 32px; padding-right: 32px; } }
+@media (min-width: 1024px) { .sec-padding { padding-left: 80px; padding-right: 80px; } }
+
+.sec-padding-y {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+@media (min-width: 640px) { .sec-padding-y { padding-top: 48px; padding-bottom: 48px; } }
+@media (min-width: 1024px) { .sec-padding-y { padding-top: 80px; padding-bottom: 80px; } }
+
+/* --------- Aggressive responsive fallbacks ---------- */
+@layer utilities {
+  .max-w-full-important {
+    max-width: 100% !important;
+  }
+  .w-auto-important {
+    width: auto !important;
+  }
+  .h-auto-important {
+    height: auto !important;
+  }
+  .whitespace-wrap {
+    white-space: normal !important;
+  }
+  .no-shrink-0 {
+    flex-shrink: 1 !important;
+    min-width: 0 !important;
+  }
+}
+
+@layer base {
+  /* Global: prevent fixed px widths from breaking mobile */
+  main, header, footer, section, article, aside, nav, div {
+    max-width: 100%;
+  }
+  .text-h1 {
+    font-size: 36px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  @media (min-width: 768px) {
+    .text-h1 { font-size: 44px; }
+  }
+  @media (min-width: 1024px) {
+    .text-h1 { font-size: 52px; line-height: 1.08; }
+  }
+}
+
+/* ============================================================
+   COMPREHENSIVE MOBILE RESPONSIVE OVERRIDES
+   Catches ALL fixed pixel values on ALL nested levels
+   ============================================================ */
+
+/* ---------- Tablet: < 1024px ---------- */
+@media (max-width: 1023px) {
+  /* Deep nesting: catch px-[80/100/110/117/120] padding at ANY level */
+  main [class*='px-\\[80px\\]'],
+  main [class*='px-\\[100px\\]'],
+  main [class*='px-\\[110px\\]'],
+  main [class*='px-\\[117px\\]'],
+  main [class*='px-\\[120px\\]'],
+  main [class*='p-\\[80px\\]'],
+  main [class*='p-\\[100px\\]'],
+  main [class*='p-\\[110px\\]'],
+  main [class*='p-\\[117px\\]'],
+  main [class*='p-\\[120px\\]'],
+  main [class*='pt-\\[120px\\]'],
+  main [class*='pt-\\[96px\\]'],
+  main [class*='pb-\\[96px\\]'],
+  footer [class*='px-\\[80px\\]'],
+  footer [class*='p-\\[80px\\]'] {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+  main [class*='py-\\[80px\\]'],
+  main [class*='p-\\[80px\\]'] {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+  main [class*='pt-\\[64px\\]'] {
+    padding-top: 32px !important;
+  }
+  main [class*='pb-\\[80px\\]'] {
+    padding-bottom: 40px !important;
+  }
+  main [class*='py-\\[40px\\]'],
+  main [class*='py-\\[56px\\]'] {
+    padding-top: 24px !important;
+    padding-bottom: 24px !important;
+  }
+  main [class*='pt-\\[120px\\]'] {
+    padding-top: 48px !important;
+  }
+  main [class*='pb-\\[96px\\]'] {
+    padding-bottom: 48px !important;
+  }
+  main [class*='py-\\[96px\\]'] {
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+  }
+  main [class*='p-\\[56px\\]'] {
+    padding: 28px !important;
+  }
+  main [class*='p-\\[44px\\]'] {
+    padding: 24px !important;
+  }
+
+  /* ---------- Flex rows wrap on tablet ---------- */
+  main [class*='content-stretch'][class*='gap-\\[16px\\]'],
+  main [class*='content-stretch'][class*='gap-\\[20px\\]'],
+  main [class*='content-stretch'][class*='gap-\\[24px\\]'],
+  main [class*='content-stretch'][class*='gap-\\[26px\\]'],
+  main [class*='content-stretch'][class*='gap-\\[28px\\]'],
+  main [class*='content-stretch'][class*='gap-\\[32px\\]'],
+  main [class*='content-stretch'][class*='gap-\\[48px\\]'],
+  main [class*='content-stretch'][class*='gap-\\[56px\\]'],
+  main [class*='content-stretch'][class*='gap-\\[113px\\]'],
+  main [class*='content-stretch'].flex-row {
+    flex-wrap: wrap !important;
+  }
+
+  /* ---------- Hero grid wrappers: stack ---------- */
+  main [data-name='Hero grid'] {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 32px !important;
+  }
+
+  /* ---------- FAQ layout wrapper: stack ---------- */
+  main [data-name='FAQ layout'] {
+    flex-direction: column !important;
+    gap: 24px !important;
+  }
+
+  /* ---------- Mission / Vision wrappers: wrap ---------- */
+  main [data-name='mv'] {
+    flex-direction: column !important;
+    gap: 32px !important;
+  }
+
+  /* ---------- "Why" grid wrappers: wrap ---------- */
+  main [data-name='Why grid'] {
+    flex-wrap: wrap !important;
+    gap: 24px !important;
+  }
+  main [data-name='why row'] {
+    flex-wrap: wrap !important;
+    gap: 24px !important;
+  }
+
+  /* ---------- Related products row: wrap ---------- */
+  main [data-name='rel row'] {
+    flex-wrap: wrap !important;
+    gap: 16px !important;
+  }
+
+  /* ---------- Values row already uses grid; no change needed here, but safe gap reduction */
+  main [data-name='values row'] {
+    gap: 16px !important;
+  }
+
+  /* ---------- Core values text description: allow wrap ---------- */
+  main [data-name='values row'] + div + div,
+  main [data-node-id*='178:4'] {
+    white-space: normal !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  /* ---------- Fixed heights causing content clipping ---------- */
+  main [class*='h-\\[478px\\]'],
+  main [class*='h-\\[481px\\]'],
+  main [class*='h-\\[228px\\]'] {
+    height: auto !important;
+    min-height: auto !important;
+  }
+  main [class*='h-\\[460px\\]'][class*='w-\\[500px\\]'],
+  main [class*='h-\\[460px\\]'] {
+    position: relative !important;
+    height: 380px !important;
+    max-width: 500px !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    flex-shrink: 0 !important;
+  }
+  main [class*='h-\\[420px\\]'][class*='w-\\[520px\\]'],
+  main [class*='h-\\[420px\\]'] {
+    position: relative !important;
+    height: 360px !important;
+    max-width: 460px !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* ---------- Referral CTA gradient card ---------- */
+  main [data-name='Referral card'] {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 24px !important;
+    padding: 32px !important;
+  }
+
+  /* ---------- Quick Contact card ---------- */
+  main [data-name='QC card'] {
+    flex-direction: column !important;
+    gap: 32px !important;
+    padding: 28px !important;
+  }
+
+  /* ---------- Trust + metrics stats row ---------- */
+  main [data-name='Key stats'] {
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+  }
+
+  /* ---------- Hero CTA buttons row ---------- */
+  main [data-name='Hero CTAs'] {
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+  }
+
+  /* ---------- Testimonials section head ---------- */
+  main [data-name='Section head'] {
+    width: 100% !important;
+    max-width: 640px !important;
+  }
+
+  /* ---------- Financial Partners section head ---------- */
+  main [data-name='FAQ head'] {
+    width: 100% !important;
+    max-width: 640px !important;
+  }
+  main [data-name='Partners row'] {
+    gap: 16px 32px !important;
+  }
+
+  /* ---------- How it works body grid ---------- */
+  main [data-name='body grid'] {
+    flex-direction: column !important;
+    gap: 24px !important;
+  }
+
+  /* ---------- Team row wraps ---------- */
+  main [data-name='team row'] {
+    flex-wrap: wrap !important;
+    gap: 16px !important;
+  }
+
+  /* ---------- All section heading wrappers: 100% width ---------- */
+  main [class*='w-\\[640px\\]'] {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* ---------- All narrow fixed-width containers: 100% ---------- */
+  main [class*='w-\\[420px\\]'],
+  main [class*='w-\\[460px\\]'],
+  main [class*='w-\\[480px\\]'],
+  main [class*='w-\\[500px\\]'],
+  main [class*='w-\\[520px\\]'],
+  main [class*='w-\\[560px\\]'],
+  main [class*='w-\\[600px\\]'],
+  main [class*='w-\\[608px\\]'],
+  main [class*='w-\\[680px\\]'],
+  main [class*='w-\\[712px\\]'],
+  main [class*='w-\\[720px\\]'] {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  main [class*='w-\\[226px\\]'],
+  main [class*='w-\\[260px\\]'],
+  main [class*='w-\\[300px\\]'],
+  main [class*='w-\\[320px\\]'],
+  main [class*='w-\\[360px\\]'],
+  main [class*='w-\\[400px\\]'],
+  main [class*='w-\\[413\\.333px\\]'] {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* ---------- Wide wrappers: 1440px etc ---------- */
+  main [class*='w-\\[1440px\\]'] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* ---------- Referral text ---------- */
+  main [data-name='Referral text'] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* ---------- Quick Contact left ---------- */
+  main [data-name='QC left'] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  main [data-name='FAQ left'] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* ---------- Mission / Vision text containers ---------- */
+  main [data-name='mission'] p[class*='w-\\[500px\\]'],
+  main [data-name='vision'] p[class*='w-\\[500px\\]'] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* ---------- Why columns ---------- */
+  main [data-name='Why col'] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  main [data-name='col'] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  main [data-name='col'] p[class*='w-\\[320px\\]'] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* ---------- Docs panel width ---------- */
+  main [data-name='docs'] {
+    width: 100% !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+  }
+
+  /* ---------- Why Finbloom column widths ---------- */
+  main [class*='w-\\[360px\\]'][data-name='Why col'] p[class*='w-\\[320px\\]'] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* ---------- Card internal text widths (product cards) ---------- */
+  main [data-name='Product card'] p[class*='w-\\[226px\\]'],
+  main [data-name='card'] p[class*='w-\\[226px\\]'] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* ---------- FAQ answer widths ---------- */
+  main [data-name='faq-item'] p[class*='w-\\[560px\\]'] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* ---------- Quick Contact answer widths ---------- */
+  main [data-name='QC left'] p[class*='w-\\[400px\\]'] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* ---------- About page hero text ---------- */
+  main [data-name='left'] p[class*='w-\\[460px\\]'] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* ---------- About page mission/vision ---------- */
+  main [data-name='mission'] p,
+  main [data-name='vision'] p {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* ---------- Cashflow Flex: hero text ---------- */
+  main [data-name='Hero grid'] p[class*='w-\\[460px\\]'] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* ---------- Products page hero text ---------- */
+  main [data-name='Hero grid'] p[class*='w-\\[520px\\]'] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* ---------- TOC (aside) on legal pages: flows in document ---------- */
+  [data-name='TOC'] {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    max-height: none !important;
+    transform: none !important;
+    margin-bottom: 24px !important;
+    overflow: visible !important;
+  }
+
+  /* ---------- Legal page sentinel hidden on tablet/mobile ---------- */
+  main [data-name='Legal layout'] > div[class*='sentinel'],
+  main [data-name='Legal layout'] > div:first-child {
+    display: none !important;
+  }
+  main [data-name='Legal layout'] {
+    flex-direction: column !important;
+    gap: 24px !important;
+  }
+
+  /* ---------- Nested hero illustration absolute panels: reposition ---------- */
+  main [data-name='Hero right'],
+  main [data-name='Hero illustration'] {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 500px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    flex-shrink: 0 !important;
+  }
+}
+
+/* ---------- Tablet-small: < 768px ---------- */
+@media (max-width: 767px) {
+  /* User-requested: 20px horizontal padding across the entire website */
+  main [class*='px-\\[80px\\]'],
+  main [class*='px-\\[100px\\]'],
+  main [class*='px-\\[110px\\]'],
+  main [class*='px-\\[117px\\]'],
+  main [class*='px-\\[120px\\]'],
+  main [class*='p-\\[80px\\]'],
+  main [class*='p-\\[100px\\]'],
+  main [class*='p-\\[110px\\]'],
+  main [class*='p-\\[117px\\]'],
+  main [class*='p-\\[120px\\]'],
+  main [class*='pt-\\[120px\\]'],
+  main [class*='pt-\\[96px\\]'],
+  main [class*='pb-\\[96px\\]'],
+  footer [class*='px-\\[80px\\]'],
+  footer [class*='p-\\[80px\\]'],
+  main [data-name='Hero'],
+  main [data-name='Legal body'],
+  main [data-name='Product grid'],
+  main [data-name='Products'],
+  main [data-name='Why Finbloom'],
+  main [data-name='Testimonials'],
+  main [data-name='Financial Partners'],
+  main [data-name='FAQ'],
+  main [data-name='Referral'],
+  main [data-name='Quick Contact'],
+  main [data-name='Mission Vision'],
+  main [data-name='Core Values'],
+  main [data-name='Why'],
+  main [data-name='Leadership'],
+  main [data-name='Body'],
+  main [data-name='Related'] {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  /* HomePage Hero specific: reduce excessive top padding pt-[120px] pb-[96px] */
+  main [data-name='Hero'][class*='pt-\\[120px\\]'],
+  main [data-node-id='29:17'][data-name='Hero'] {
+    padding-top: 32px !important;
+    padding-bottom: 40px !important;
+  }
+  main [data-name='Hero'][class*='pt-\\[64px\\]'],
+  main [data-name='Hero'][class*='py-\\[96px\\]'] {
+    padding-top: 28px !important;
+    padding-bottom: 32px !important;
+  }
+  main [data-name='Hero'][class*='py-\\[40px\\]'] {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
+
+  /* Hero gap reduction between text + illustration */
+  main [data-name='Hero grid'] {
+    gap: 24px !important;
+  }
+
+  /* Verticals: tighten hero CTA spacing */
+  main [data-name='Hero left'] {
+    gap: 18px !important;
+  }
+  main [data-name='Hero CTAs'] {
+    gap: 10px !important;
+  }
+  main [data-name='Trust row'] {
+    gap: 8px 18px !important;
+  }
+}
+
+/* ---------- Mobile-only: < 640px ---------- */
+@media (max-width: 639px) {
+  /* Consistent with <768px: use 20px horizontal padding as requested */
+  main [class*='px-\\[80px\\]'],
+  main [class*='px-\\[100px\\]'],
+  main [class*='px-\\[110px\\]'],
+  main [class*='px-\\[117px\\]'],
+  main [class*='px-\\[120px\\]'],
+  main [class*='p-\\[80px\\]'],
+  main [class*='p-\\[100px\\]'],
+  main [class*='p-\\[110px\\]'],
+  main [class*='p-\\[117px\\]'],
+  main [class*='p-\\[120px\\]'],
+  footer [class*='px-\\[80px\\]'],
+  footer [class*='p-\\[80px\\]'],
+  main [data-name='Legal body'] {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  main [class*='py-\\[80px\\]'],
+  main [class*='p-\\[80px\\]'] {
+    padding-top: 28px !important;
+    padding-bottom: 28px !important;
+  }
+  main [class*='pt-\\[64px\\]'] {
+    padding-top: 20px !important;
+  }
+  main [class*='pb-\\[80px\\]'] {
+    padding-bottom: 28px !important;
+  }
+  main [class*='py-\\[56px\\]'],
+  main [class*='p-\\[56px\\]'] {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
+  main [class*='py-\\[40px\\]'] {
+    padding-top: 14px !important;
+    padding-bottom: 14px !important;
+  }
+
+  /* HomePage Hero section (selected): very aggressive top/bottom padding reduction */
+  main [class*='pt-\\[120px\\]'],
+  main [data-name='Hero'][class*='pt-\\[120px\\]'],
+  main [data-node-id='29:17'][data-name='Hero'] {
+    padding-top: 24px !important;
+  }
+  main [class*='pb-\\[96px\\]'],
+  main [data-name='Hero'][class*='pb-\\[96px\\]'],
+  main [data-node-id='29:17'][data-name='Hero'] {
+    padding-bottom: 28px !important;
+  }
+  main [class*='py-\\[96px\\]'] {
+    padding-top: 24px !important;
+    padding-bottom: 28px !important;
+  }
+  main [class*='p-\\[44px\\]'] {
+    padding: 18px !important;
+  }
+  main [class*='p-\\[32px\\]'] {
+    padding: 18px !important;
+  }
+}
+
+/* ============================================================
+   ALL TEXT SIZES + WHITESPACE NORMALIZATION
+   ============================================================ */
+
+/* Tablet and below: break nowrap, scale big text */
+@media (max-width: 1023px) {
+  main p[class*='whitespace-nowrap'],
+  main [class*='whitespace-nowrap'] {
+    white-space: normal !important;
+  }
+  main p[class*='text-\\[52px\\]'],
+  main [class*='text-\\[52px\\]'] {
+    font-size: 40px !important;
+    line-height: 1.1 !important;
+  }
+  main p[class*='text-\\[44px\\]'],
+  main [class*='text-\\[44px\\]'] {
+    font-size: 34px !important;
+    line-height: 1.1 !important;
+  }
+  main p[class*='text-\\[40px\\]'],
+  main [class*='text-\\[40px\\]'] {
+    font-size: 32px !important;
+    line-height: 1.1 !important;
+  }
+  main p[class*='text-\\[32px\\]'],
+  main [class*='text-\\[32px\\]'] {
+    font-size: 26px !important;
+    line-height: 1.2 !important;
+  }
+  main p[class*='text-\\[30px\\]'],
+  main [class*='text-\\[30px\\]'] {
+    font-size: 24px !important;
+    line-height: 1.2 !important;
+  }
+}
+
+/* Mobile: aggressive scale, break nowrap */
+@media (max-width: 639px) {
+  main [class*='text-\\[52px\\]'] {
+    font-size: 32px !important;
+    line-height: 1.1 !important;
+  }
+  main [class*='text-\\[44px\\]'],
+  main [class*='text-\\[40px\\]'] {
+    font-size: 28px !important;
+    line-height: 1.1 !important;
+  }
+  main [class*='text-\\[32px\\]'],
+  main [class*='text-\\[30px\\]'] {
+    font-size: 22px !important;
+    line-height: 1.2 !important;
+  }
+  main [class*='text-\\[26px\\]'],
+  main [class*='text-\\[24px\\]'] {
+    font-size: 20px !important;
+    line-height: 1.25 !important;
+  }
+  main [class*='text-\\[22px\\]'],
+  main [class*='text-\\[21px\\]'] {
+    font-size: 18px !important;
+    line-height: 1.3 !important;
+  }
+  main [class*='text-\\[20px\\]'] {
+    font-size: 17px !important;
+    line-height: 1.3 !important;
+  }
+  main [class*='text-\\[18px\\]'] {
+    font-size: 16px !important;
+    line-height: 1.35 !important;
+  }
+  main [class*='text-\\[17px\\]'] {
+    font-size: 15px !important;
+  }
+}
+
+/* ============================================================
+   HERO ILLUSTRATION PANELS - SCALING ON SMALL SCREENS
+   ============================================================ */
+
+@media (max-width: 768px) {
+  /* HomePage hero illustration outer */
+  main [data-name='Hero right'] {
+    height: 360px !important;
+  }
+  main [data-name='Device frame'] {
+    height: 320px !important;
+    width: calc(100% - 40px) !important;
+    max-width: 420px !important;
+    left: 20px !important;
+    top: 20px !important;
+    right: auto !important;
+  }
+  main [data-name='Device frame'] + div,
+  main [data-name='Device frame'] ~ [data-name='Grid'] {
+    height: 320px !important;
+    width: 100% !important;
+  }
+  main [data-name='bars'] {
+    width: calc(100% - 52px) !important;
+    top: 180px !important;
+    left: 26px !important;
+    height: auto !important;
+  }
+  main [data-name='bars'] > div {
+    width: 30px !important;
+  }
+  main [data-name='Float card A'] {
+    width: 160px !important;
+    top: 0 !important;
+    left: 0 !important;
+    padding: 12px 14px !important;
+  }
+  main [data-name='Float card A'] p[class*='text-\\[21px\\]'] {
+    font-size: 17px !important;
+  }
+  main [data-name='Float card B'] {
+    left: auto !important;
+    right: 8px !important;
+    top: auto !important;
+    bottom: 8px !important;
+    width: 220px !important;
+    height: auto !important;
+    padding: 10px 12px !important;
+  }
+
+  /* ProductsDesktop illustration outer */
+  main [data-name='Hero illustration'] {
+    height: 360px !important;
+  }
+  main [data-name='Illustration panel'] {
+    width: calc(100% - 40px) !important;
+    max-width: 420px !important;
+    height: 320px !important;
+    left: 20px !important;
+    top: 20px !important;
+  }
+
+  /* TermsOfService / PrivacyPolicy illustration frames */
+  main [data-name='Illustration frame'] {
+    width: calc(100% - 40px) !important;
+    max-width: 420px !important;
+    height: 320px !important;
+    left: 20px !important;
+    top: 20px !important;
+    right: auto !important;
+  }
+  main [data-name='Illustration frame'] > [data-name='illustration'],
+  main [data-name='Illustration frame'] > [data-name='contract'],
+  main [data-name='Illustration frame'] > [data-name='policy'] {
+    width: calc(100% - 52px) !important;
+    max-width: 370px !important;
+    height: 270px !important;
+    left: 26px !important;
+    top: 26px !important;
+  }
+  main [data-name='contract-lines'],
+  main [data-name='policy-lines'] {
+    gap: 8px !important;
+  }
+  main [data-name='doc-icon'],
+  main [data-name='shield-icon'],
+  main [data-name='lock-icon'] {
+    left: 18px !important;
+    top: 18px !important;
+    width: 58px !important;
+    height: 58px !important;
+    border-radius: 14px !important;
+  }
+  main [data-name='shield-icon'] {
+    left: 84px !important;
+  }
+  main [data-name='contract'],
+  main [data-name='policy'] {
+    height: 150px !important;
+    top: 104px !important;
+    padding: 14px !important;
+  }
+  main [data-name='contract-header'],
+  main [data-name='policy-header'] {
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+
+  /* CashflowFlex illustration */
+  main [data-name='Hero illustration'] {
+    height: 340px !important;
+    width: 100% !important;
+    max-width: 460px !important;
+  }
+  main [data-name='Hero illustration'] > [data-name='grid'] {
+    height: 340px !important;
+    width: 100% !important;
+  }
+  main [data-name='Hero illustration'] > [data-name='illustration'] {
+    width: 340px !important;
+    height: 340px !important;
+  }
+  main [data-name='interest-bars'] {
+    width: 260px !important;
+    left: 40px !important;
+    top: 170px !important;
+  }
+  main [data-name='interest-bars'] > div {
+    width: 22px !important;
+  }
+  main [data-name='principal'] {
+    width: 100px !important;
+    height: 100px !important;
+    left: 180px !important;
+    top: 44px !important;
+  }
+  main [data-name='Line'] {
+    left: 180px !important;
+    top: 144px !important;
+    width: 180px !important;
+  }
+
+  /* About page illustration */
+  main [data-node-id='165:345'][data-name='Hero illustration'] {
+    height: 340px !important;
+    max-width: 460px !important;
+  }
+  main [data-name='bg-grid'],
+  main [data-name='bg-grid'] + [data-name='illustration'] {
+    height: 340px !important;
+    width: 100% !important;
+  }
+  main [data-name='growth-bars'] {
+    width: 280px !important;
+    left: 70px !important;
+    top: 150px !important;
+    height: auto !important;
+  }
+  main [data-name='growth-bars'] > div {
+    width: 32px !important;
+  }
+
+  /* Referral gradient card */
+  main [data-name='Referral card'] {
+    padding: 28px 24px !important;
+    border-radius: 20px !important;
+    gap: 20px !important;
+  }
+  main [data-name='Referral card'] [class*='text-\\[40px\\]'] {
+    font-size: 28px !important;
+  }
+  main [data-name='Referral card'] [class*='text-\\[18px\\]'] {
+    font-size: 15px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  main [data-name='Hero right'] {
+    height: 300px !important;
+    max-width: 100% !important;
+  }
+  main [data-name='Device frame'] {
+    height: 260px !important;
+    width: calc(100% - 24px) !important;
+    left: 12px !important;
+    top: 20px !important;
+    border-radius: 22px !important;
+  }
+  main [data-name='bars'] {
+    width: calc(100% - 40px) !important;
+    top: 148px !important;
+    left: 20px !important;
+  }
+  main [data-name='bars'] > div {
+    width: 24px !important;
+  }
+  main [data-name='bars'] > div[class*='h-\\[124px\\]'] {
+    height: 96px !important;
+  }
+  main [data-name='bars'] > div[class*='h-\\[105px\\]'] {
+    height: 80px !important;
+  }
+  main [data-name='bars'] > div[class*='h-\\[92px\\]'] {
+    height: 70px !important;
+  }
+  main [data-name='bars'] > div[class*='h-\\[85px\\]'] {
+    height: 64px !important;
+  }
+  main [data-name='bars'] > div[class*='h-\\[76px\\]'] {
+    height: 58px !important;
+  }
+  main [data-name='bars'] > div[class*='h-\\[70px\\]'] {
+    height: 52px !important;
+  }
+  main [data-name='bars'] > div[class*='h-\\[64px\\]'] {
+    height: 48px !important;
+  }
+  main [data-name='bars'] > div[class*='h-\\[55px\\]'] {
+    height: 40px !important;
+  }
+
+  main [data-name='Float card A'] {
+    width: 140px !important;
+    padding: 10px 12px !important;
+  }
+  main [data-name='Float card A'] p[class*='text-\\[21px\\]'] {
+    font-size: 15px !important;
+  }
+  main [data-name='Float card A'] p[class*='text-\\[10\\.5px\\]'] {
+    font-size: 9px !important;
+  }
+  main [data-name='Float card B'] {
+    right: 4px !important;
+    bottom: 4px !important;
+    width: 195px !important;
+    padding: 8px 10px !important;
+    height: auto !important;
+  }
+  main [data-name='Float card B'] [class*='size-\\[24px\\]'] {
+    width: 20px !important;
+    height: 20px !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Products desktop illustration */
+  main [data-name='Hero illustration'] {
+    height: 320px !important;
+  }
+  main [data-name='Illustration panel'] {
+    height: 280px !important;
+    width: calc(100% - 24px) !important;
+    left: 12px !important;
+    top: 20px !important;
+    border-radius: 22px !important;
+  }
+
+  /* Terms/Privacy illustration frames (480px) */
+  main [data-name='Illustration frame'] {
+    height: 270px !important;
+    width: calc(100% - 24px) !important;
+    max-width: 360px !important;
+    left: 12px !important;
+    top: 20px !important;
+    border-radius: 22px !important;
+  }
+  main [data-name='Illustration frame'] > [data-name='illustration'],
+  main [data-name='Illustration frame'] > [data-name='contract'],
+  main [data-name='Illustration frame'] > [data-name='policy'] {
+    width: calc(100% - 40px) !important;
+    max-width: 310px !important;
+    height: 220px !important;
+    left: 20px !important;
+    top: 20px !important;
+  }
+  main [data-name='doc-icon'],
+  main [data-name='shield-icon'],
+  main [data-name='lock-icon'] {
+    left: 14px !important;
+    top: 14px !important;
+    width: 48px !important;
+    height: 48px !important;
+    border-radius: 12px !important;
+  }
+  main [data-name='shield-icon'] {
+    left: 72px !important;
+  }
+  main [data-name='doc-icon'] > div,
+  main [data-name='shield-icon'] > div,
+  main [data-name='lock-icon'] > div {
+    width: 24px !important;
+    height: 24px !important;
+  }
+  main [data-name='contract'],
+  main [data-name='policy'] {
+    height: 130px !important;
+    top: 82px !important;
+    padding: 12px !important;
+  }
+  main [data-name='contract-lines'] > div,
+  main [data-name='policy-lines'] > div {
+    height: 8px !important;
+  }
+
+  /* CashflowFlex illustration */
+  main [data-name='Hero illustration'] {
+    height: 300px !important;
+  }
+  main [data-name='Hero illustration'] > [data-name='grid'] {
+    height: 300px !important;
+  }
+  main [data-name='Hero illustration'] > [data-name='illustration'] {
+    width: 280px !important;
+    height: 280px !important;
+  }
+  main [data-name='interest-bars'] {
+    width: 220px !important;
+    left: 30px !important;
+    top: 150px !important;
+  }
+  main [data-name='interest-bars'] > div {
+    width: 18px !important;
+  }
+  main [data-name='principal'] {
+    width: 84px !important;
+    height: 84px !important;
+    left: 150px !important;
+    top: 38px !important;
+  }
+  main [data-name='Line'] {
+    left: 150px !important;
+    top: 122px !important;
+    width: 150px !important;
+  }
+
+  /* About page illustration */
+  main [data-node-id='165:345'][data-name='Hero illustration'] {
+    height: 300px !important;
+  }
+  main [data-name='bg-grid'],
+  main [data-name='bg-grid'] + [data-name='illustration'] {
+    height: 300px !important;
+  }
+  main [data-name='growth-bars'] {
+    width: 240px !important;
+    left: 50px !important;
+    top: 130px !important;
+  }
+  main [data-name='growth-bars'] > div {
+    width: 28px !important;
+  }
+  main [data-name='growth-bars'] > div[class*='h-\\[110px\\]'] {
+    height: 84px !important;
+  }
+  main [data-name='growth-bars'] > div[class*='h-\\[96px\\]'] {
+    height: 72px !important;
+  }
+  main [data-name='growth-bars'] > div[class*='h-\\[86px\\]'] {
+    height: 64px !important;
+  }
+
+  /* Trust row: allow 2-column wrap */
+  main [data-name='Trust row'] {
+    gap: 8px 20px !important;
+  }
+
+  /* Referral CTA even tighter on very small - stack and force buttons full width */
+  main [data-name='Referral card'] {
+    padding: 24px 20px !important;
+    border-radius: 18px !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+    align-items: stretch !important;
+    text-align: left !important;
+  }
+  main [data-name='Referral text'] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  main [data-name='Action container'] {
+    width: 100% !important;
+    max-width: 100% !important;
+    align-items: stretch !important;
+  }
+  main [data-name='Action container'] > [data-name='Button'] {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  /* Quick Contact: stack layout, inputs + send button span out */
+  main [data-name='QC card'] {
+    padding: 20px !important;
+    border-radius: 20px !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+  main [data-name='QC left'],
+  main [data-name='QC right'] {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+  main [data-name='QC right'] {
+    gap: 12px !important;
+  }
+  main [data-name='field'],
+  main [data-name='input'] {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    flex-shrink: 1 !important;
+  }
+
+  /* Testimonials: force exactly 1 card per view on mobile */
+  main [data-name='Testimonial card'] {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    flex-shrink: 0 !important;
+    flex-basis: 100% !important;
+    padding: 20px !important;
+  }
+  main [data-name='Testimonials'] > div[class*='relative w-full'] > div[class*='overflow-hidden'] {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  main [data-name='Testimonials'] [style*='gap: 20px'],
+  main [data-name='Testimonials'] [class*='gap-\\[20px\\]'] {
+    gap: 16px !important;
+  }
+  main [data-name='Testimonials'] article > p[class*='max-w-\\[320px\\]'] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Product card padding */
+  main [data-name='Product card'],
+  main [data-name='card'] {
+    padding: 18px !important;
+  }
+
+  /* Hero CTA buttons full-width */
+  main [data-name='Hero CTAs'] > a {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  /* Hero section CTA button */
+  main [data-name='apply-btn'] {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  /* Apply buttons: mobile full width */
+  main [data-name='Button/Explore'],
+  main [data-name='Button'] {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  /* Testimonial prev/next visible on mobile only arrows */
+}
+
+/* ============================================================
+   MOBILE MENU
+   ============================================================ */
+.mobile-menu-panel {
+  max-height: calc(100vh - 84px - 16px);
+  overflow-y: auto;
+}
+
+/* ============================================================
+   LEGAL PAGES (Terms, Privacy) ADDITIONAL MOBILE FIXES
+   ============================================================ */
+@media (max-width: 1023px) {
+  main [data-name='Legal body'] [class*='px-\\[80px\\]'],
+  main [data-name='Legal body'] {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  main [data-name='Legal body'] [class*='pb-\\[80px\\]'],
+  main [data-name='Legal body'] {
+    padding-bottom: 40px !important;
+  }
+}
+@media (max-width: 639px) {
+  main [data-name='Legal body'] [class*='px-\\[80px\\]'],
+  main [data-name='Legal body'] {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
+
+/* Legal hero chips on mobile: wrap */
+main [data-name='trust-row'] {
+  flex-wrap: wrap !important;
+  gap: 10px !important;
+}
+main [data-name='trust-chip'] {
+  width: auto !important;
+  flex-shrink: 1 !important;
+}
+main [data-name='policy-summary-cards'] {
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+}
+main [data-name='policy-summary-card'] {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+@media (max-width: 639px) {
+  main [data-name='policy-summary-cards'] > div {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+}
+
+/* ============================================================
+   FOOTER APP-SHELL RESPONSIVE ADJUSTMENTS
+   ============================================================ */
+@media (max-width: 639px) {
+  footer [class*='text-\\[17px\\]'] {
+    font-size: 15px !important;
+  }
+  footer [data-name='Footer brand'] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  footer [data-name='Footer links'] {
+    flex-wrap: wrap !important;
+    gap: 32px !important;
+    width: 100% !important;
+  }
+  footer [data-name='footer-col'] {
+    width: calc(50% - 16px) !important;
+    min-width: calc(50% - 16px) !important;
+    flex-shrink: 0 !important;
+  }
+  footer [data-name='Footer top'] {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 32px !important;
+  }
+}
+
+/* ============================================================
+   MOBILE NAVBAR - PREVENT OVERFLOW
+   ============================================================ */
+@media (max-width: 639px) {
+  header [class*='min-h-\\[84px\\]'] {
+    min-height: 72px !important;
+  }
+  header img[alt='Finbloom Capital'] {
+    width: 104px !important;
+    height: 29px !important;
+  }
+}
+
+/* ============================================================
+   SCROLL REVEAL + ACCESSIBILITY
+   ============================================================ */
+@keyframes reveal-up {
+  0% { opacity: 0; transform: translateY(18px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.reveal-up {
+  animation: reveal-up 650ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal-up { animation: none; }
+  * { scroll-behavior: auto !important; }
+}
