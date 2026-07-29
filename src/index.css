@@ -640,6 +640,7 @@ main [data-reveal][data-delay='600'] { transition-delay: 0.6s; }
   main [class*='p-\\[110px\\]'],
   main [class*='p-\\[117px\\]'],
   main [class*='p-\\[120px\\]'],
+  main [class*='pt-\\[100px\\]'],
   main [class*='pt-\\[120px\\]'],
   main [class*='pt-\\[96px\\]'],
   main [class*='pb-\\[96px\\]'],
@@ -665,8 +666,9 @@ main [data-reveal][data-delay='600'] { transition-delay: 0.6s; }
     padding-right: 20px !important;
   }
 
-  /* HomePage Hero specific: reduce excessive top padding pt-[120px] pb-[96px] */
+  /* HomePage Hero specific: reduce excessive top padding */
   main [data-name='Hero'][class*='pt-\\[120px\\]'],
+  main [data-name='Hero'][class*='pt-\\[100px\\]'],
   main [data-node-id='29:17'][data-name='Hero'] {
     padding-top: 32px !important;
     padding-bottom: 40px !important;
@@ -1249,23 +1251,12 @@ main [data-reveal][data-delay='600'] { transition-delay: 0.6s; }
     flex-shrink: 1 !important;
   }
 
-  /* Testimonials: force exactly 1 card per view on mobile */
-  main [data-name='Testimonial card'] {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-    flex-shrink: 0 !important;
-    flex-basis: 100% !important;
-    padding: 20px !important;
-  }
+
   main [data-name='Testimonials'] > div[class*='relative w-full'] > div[class*='overflow-hidden'] {
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
-  main [data-name='Testimonials'] [style*='gap: 20px'],
-  main [data-name='Testimonials'] [class*='gap-\\[20px\\]'] {
-    gap: 16px !important;
-  }
+
   main [data-name='Testimonials'] article > p[class*='max-w-\\[320px\\]'] {
     width: 100% !important;
     max-width: 100% !important;
@@ -1409,4 +1400,25 @@ main [data-name='policy-summary-card'] {
 @media (prefers-reduced-motion: reduce) {
   .reveal-up { animation: none; }
   * { scroll-behavior: auto !important; }
+}
+
+/* ============================================================
+   GLOBAL RESPONSIVENESS (Prevent overflow on any viewport)
+   ============================================================ */
+/* Prevent any fixed-width element from being wider than its container/viewport */
+main [class*='w-\\['] {
+  max-width: 100% !important;
+}
+
+/* Allow large fixed-width containers to shrink down instead of overflowing */
+main [class*='w-\\[3'],
+main [class*='w-\\[4'],
+main [class*='w-\\[5'],
+main [class*='w-\\[6'],
+main [class*='w-\\[7'],
+main [class*='w-\\[8'],
+main [class*='w-\\[9'],
+main [class*='w-\\[10'] {
+  flex-shrink: 1 !important;
+  min-width: 0 !important;
 }

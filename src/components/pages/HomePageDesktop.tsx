@@ -105,12 +105,9 @@ function TestimonialsCarousel() {
     if (page >= pages) setPage(0);
   }, [pages, page]);
 
-  const trackStyle =
-    typeof window !== 'undefined' && window.innerWidth >= 1024
-      ? { transform: `translateX(calc(-1 * ${page} * ((100% - ${visible - 1} * 20px) / ${visible} + 20px)))` }
-      : typeof window !== 'undefined' && window.innerWidth >= 768
-      ? { transform: `translateX(calc(-1 * ${page} * (50% - 10px + 20px)))` }
-      : { transform: `translateX(calc(-1 * ${page} * (100% + 20px)))` };
+  const trackStyle = {
+    transform: `translateX(calc(-1 * ${page} * ((100% - ${visible - 1} * 20px) / ${visible} + 20px)))`
+  };
 
   return (
     <section className="bg-white content-stretch flex flex-col items-start overflow-clip p-[80px] relative shrink-0 w-full" data-node-id="32:2" data-name="Testimonials">
@@ -149,12 +146,9 @@ function TestimonialsCarousel() {
                 key={i}
                 className="bg-[#e5eff1] content-stretch flex flex-col gap-[18px] items-start overflow-clip px-[26px] py-[28px] relative rounded-[18px] shrink-0"
                 style={{
-                  width:
-                    typeof window !== 'undefined' && window.innerWidth >= 1024
-                      ? `calc((100% - ${visible - 1} * 20px) / ${visible})`
-                      : typeof window !== 'undefined' && window.innerWidth >= 768
-                      ? 'calc(50% - 10px)'
-                      : '100%',
+                  flex: `0 0 calc((100% - ${visible - 1} * 20px) / ${visible})`,
+                  width: `calc((100% - ${visible - 1} * 20px) / ${visible})`,
+                  minWidth: `calc((100% - ${visible - 1} * 20px) / ${visible})`,
                 }}
                 data-node-id={`32:tc-${i}`}
                 data-name="Testimonial card"
@@ -199,54 +193,98 @@ function TestimonialsCarousel() {
           </svg>
         </button>
 
-        <div className="flex justify-between absolute inset-x-2 top-1/2 z-10 -translate-y-1/2 md:hidden pointer-events-none">
-          <button
-            type="button"
-            aria-label="Previous testimonial"
-            onClick={prev}
-            className="pointer-events-auto inline-flex items-center justify-center rounded-full border border-[#e7e5e1] bg-white shadow-md text-[#034f5b] size-9"
-          >
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <path d="M15 18l-6-6 6-6" />
-            </svg>
-          </button>
-          <button
-            type="button"
-            aria-label="Next testimonial"
-            onClick={next}
-            className="pointer-events-auto inline-flex items-center justify-center rounded-full border border-[#e7e5e1] bg-white shadow-md text-[#034f5b] size-9"
-          >
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <path d="M9 18l6-6-6-6" />
-            </svg>
-          </button>
-        </div>
       </div>
       <div className="h-[20px] relative shrink-0 w-[10px]" data-node-id="32:38" data-name="spacer" />
-      <div className="content-stretch flex gap-[8px] items-center overflow-clip relative shrink-0" data-node-id="32:37" data-name="dots">
-        {Array.from({ length: pages }).map((_, i) => (
-          <button
-            key={i}
-            type="button"
-            aria-label={`Go to testimonial page ${i + 1}`}
-            onClick={() => setPage(i)}
-            className={`relative rounded-[4px] shrink-0 size-[8px] transition-all ${
-              i === page ? 'bg-[#2c4e4e]' : 'bg-[#e7e5e1]'
-            }`}
-            data-node-id={`32:dot-${i}`}
-            data-name="dot"
-          />
-        ))}
+      <div className="flex items-center gap-[24px]">
+        <button
+          type="button"
+          aria-label="Previous testimonial"
+          onClick={prev}
+          className="inline-flex items-center justify-center rounded-full border border-[#e7e5e1] bg-white shadow-sm text-[#034f5b] size-9 md:hidden"
+        >
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <path d="M15 18l-6-6 6-6" />
+          </svg>
+        </button>
+        <div className="content-stretch flex gap-[8px] items-center overflow-clip relative shrink-0" data-node-id="32:37" data-name="dots">
+          {Array.from({ length: pages }).map((_, i) => (
+            <button
+              key={i}
+              type="button"
+              aria-label={`Go to testimonial page ${i + 1}`}
+              onClick={() => setPage(i)}
+              className={`relative rounded-[4px] shrink-0 size-[8px] transition-all ${
+                i === page ? 'bg-[#2c4e4e]' : 'bg-[#e7e5e1]'
+              }`}
+              data-node-id={`32:dot-${i}`}
+              data-name="dot"
+            />
+          ))}
+        </div>
+        <button
+          type="button"
+          aria-label="Next testimonial"
+          onClick={next}
+          className="inline-flex items-center justify-center rounded-full border border-[#e7e5e1] bg-white shadow-sm text-[#034f5b] size-9 md:hidden"
+        >
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <path d="M9 18l6-6-6-6" />
+          </svg>
+        </button>
       </div>
     </section>
   );
 }
 
 
+
+
+type FaqCategory = 'all' | 'eligibility' | 'repayment' | 'security';
+
+const faqItems: { q: string; a: string; cat: FaqCategory }[] = [
+  { cat: 'eligibility', q: "Who can apply for financing?", a: "Nigerian individuals and registered businesses that meet Finbloom Capital's identity, income, cash-flow and credit-assessment requirements may apply." },
+  { cat: 'eligibility', q: "What financing products does Finbloom offer?", a: "Finbloom offers SME Growth Loans, Cashflow Flex Loans, Invoice Finance and Asset Finance. Product availability depends on eligibility, financing needs and repayment capacity." },
+  { cat: 'eligibility', q: "What documents will I need?", a: "Requirements may include a valid means of identification, BVN and NIN, proof of address, recent bank statements, proof of income or business cash flow, CAC documents, relevant invoices or contracts, and guarantor or collateral documents where required." },
+  { cat: 'eligibility', q: "How do I apply?", a: "Select your preferred financing product, complete the online application and provide the required documents. Finbloom will review your information and communicate the outcome through your registered contact details." },
+  { cat: 'eligibility', q: "How long does the application process take?", a: "Processing time depends on the product, completeness of the application and required verification. Providing accurate information and complete documents can help reduce delays." },
+  { cat: 'eligibility', q: "How much can I borrow?", a: "The approved amount depends on your verified income or business cash flow, existing obligations, credit history, requested product and demonstrated ability to repay." },
+  { cat: 'eligibility', q: "Does submitting an application guarantee approval?", a: "No. Every application is subject to identity verification, credit-bureau checks, affordability assessment and Finbloom Capital's credit-approval criteria." },
+  { cat: 'eligibility', q: "How will I know the interest rate and applicable charges?", a: "Before accepting a facility, you will receive an offer showing the approved amount, interest rate, applicable fees, repayment schedule and total repayment obligation." },
+  { cat: 'repayment', q: "How will I repay my loan?", a: "Repayment may be made through direct debit, bank transfer or another approved payment method. Your offer letter and facility agreement will specify the amount, due dates and approved repayment channel." },
+  { cat: 'repayment', q: "How does the Cashflow Flex Loan work?", a: "You pay the applicable interest every month and repay the full principal at maturity. The final payment normally includes the principal and last month's interest, as stated in the facility agreement." },
+  { cat: 'repayment', q: "Can I repay before maturity?", a: "Early repayment may be permitted, subject to your offer letter and facility agreement. Contact Finbloom for the applicable settlement amount before making an early repayment." },
+  { cat: 'repayment', q: "What happens if I miss a repayment?", a: "Contact Finbloom immediately if you expect difficulty. Missed repayments may attract disclosed charges, affect your credit record and result in lawful recovery action." },
+  { cat: 'repayment', q: "Is collateral or a guarantor required?", a: "This depends on the product, amount and credit assessment. Some facilities may require a guarantor, financed asset, invoice, investment, movable asset or other acceptable security." },
+  { cat: 'security', q: "Will Finbloom check my credit history?", a: "Yes. Finbloom may obtain information from licensed credit bureaus to assess creditworthiness and may report facility performance in accordance with applicable requirements." },
+  { cat: 'security', q: "Does Finbloom access my contacts, photographs or call logs?", a: "No. Finbloom's lending services are not designed to access customers' phone contacts, call logs, private messages or photo gallery for lending or debt-recovery purposes." },
+  { cat: 'security', q: "How is my personal information protected?", a: "Finbloom processes information for legitimate lending, verification, servicing and compliance purposes and applies safeguards in line with its Privacy Policy and applicable data-protection requirements." },
+  { cat: 'security', q: "How can I contact Finbloom?", a: "Use the official contact details displayed on this website or email info@finbloomcapital.com. Never disclose your password, PIN or one-time code to anyone." },
+];
+
+const faqCategories: { id: FaqCategory; label: string }[] = [
+  { id: 'all', label: 'All questions' },
+  { id: 'eligibility', label: 'Eligibility & applying' },
+  { id: 'repayment', label: 'Repayment' },
+  { id: 'security', label: 'Security & data' },
+];
+
 export default function HomePageDesktop() {
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [activeCategory, setActiveCategory] = useState<FaqCategory>('all');
+  const [faqSearch, setFaqSearch] = useState('');
+
+  const filteredFaqs = useMemo(() => {
+    let items = activeCategory === 'all' ? faqItems : faqItems.filter(f => f.cat === activeCategory);
+    if (faqSearch.trim()) {
+      const q = faqSearch.toLowerCase();
+      items = items.filter(f => f.q.toLowerCase().includes(q) || f.a.toLowerCase().includes(q));
+    }
+    return items;
+  }, [activeCategory, faqSearch]);
+
   return (
     <div className="bg-[#faf9f6] content-stretch flex flex-col items-start relative size-full" data-node-id="29:3" data-name="Home Page - Desktop">
-      <div className="bg-[#faf9f6] content-stretch flex flex-col items-start overflow-clip pb-[96px] pt-[120px] px-[117px] relative shrink-0 w-full" data-node-id="29:17" data-name="Hero">
+      <div className="bg-[#faf9f6] content-stretch flex flex-col items-start overflow-clip pb-[96px] pt-[100px] px-[117px] relative shrink-0 w-full" data-node-id="29:17" data-name="Hero">
         <div className="content-stretch flex gap-[113px] items-center overflow-clip relative shrink-0 w-full" data-node-id="29:18" data-name="Hero grid">
           <div className="content-stretch flex flex-col gap-[22px] items-start overflow-clip relative shrink-0" data-node-id="29:19" data-name="Hero left">
             <div className="[word-break:break-word] font-['Plus_Jakarta_Sans:ExtraBold'] font-extrabold leading-[0] relative shrink-0 text-[#062530] text-[52px] whitespace-nowrap" data-node-id="29:22">
@@ -569,71 +607,74 @@ export default function HomePageDesktop() {
         <div className="h-[36px] relative shrink-0 w-[10px]" data-node-id="84:8" data-name="spacer" />
         <div className="content-stretch flex gap-[56px] items-start overflow-clip relative shrink-0 w-full" data-node-id="84:9" data-name="FAQ layout">
           <div className="content-stretch flex flex-col gap-[8px] items-start overflow-clip relative shrink-0 w-[300px]" data-node-id="84:10" data-name="FAQ left">
+            {/* Search */}
             <div className="bg-white border border-[#e7e5e1] border-solid content-stretch flex items-center overflow-clip px-[20px] py-[13px] relative rounded-[100px] shrink-0 w-full" data-node-id="84:11" data-name="Search">
-              <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[normal] not-italic relative shrink-0 text-[#8b939c] text-[14px] whitespace-nowrap" data-node-id="84:12">
-                Search questions
-              </p>
+              <input
+                type="text"
+                value={faqSearch}
+                onChange={e => { setFaqSearch(e.target.value); setOpenFaq(null); }}
+                placeholder="Search questions"
+                className="bg-transparent border-none outline-none w-full font-['Inter:Regular'] font-normal text-[14px] text-[#062530] placeholder:text-[#8b939c]"
+              />
             </div>
             <div className="relative shrink-0 size-[10px]" data-node-id="84:13" data-name="spacer" />
-            <div className="bg-[#e5eff1] content-stretch flex items-start overflow-clip px-[16px] py-[12px] relative rounded-[12px] shrink-0 w-full" data-node-id="84:14" data-name="cat-btn">
-              <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[#034f5b] text-[14px] whitespace-nowrap" data-node-id="84:15">
-                All questions
-              </p>
-            </div>
-            <div className="content-stretch flex items-start overflow-clip px-[16px] py-[12px] relative rounded-[12px] shrink-0 w-full" data-node-id="84:16" data-name="cat-btn">
-              <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[#55606b] text-[14px] whitespace-nowrap" data-node-id="84:17">{`Eligibility & applying`}</p>
-            </div>
-            <div className="content-stretch flex items-start overflow-clip px-[16px] py-[12px] relative rounded-[12px] shrink-0 w-full" data-node-id="84:18" data-name="cat-btn">
-              <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[#55606b] text-[14px] whitespace-nowrap" data-node-id="84:19">
-                Repayment
-              </p>
-            </div>
-            <div className="content-stretch flex items-start overflow-clip px-[16px] py-[12px] relative rounded-[12px] shrink-0 w-full" data-node-id="84:20" data-name="cat-btn">
-              <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[#55606b] text-[14px] whitespace-nowrap" data-node-id="84:21">{`Security & data`}</p>
-            </div>
+            {/* Category buttons */}
+            {faqCategories.map(cat => {
+              const isActive = activeCategory === cat.id;
+              return (
+                <button
+                  key={cat.id}
+                  type="button"
+                  onClick={() => { setActiveCategory(cat.id); setOpenFaq(null); setFaqSearch(''); }}
+                  className={`w-full text-left content-stretch flex items-start overflow-clip px-[16px] py-[12px] relative rounded-[12px] shrink-0 cursor-pointer transition-colors duration-200 ${
+                    isActive
+                      ? 'bg-[#e5eff1]'
+                      : 'hover:bg-[#f0f4f5]'
+                  }`}
+                  data-name="cat-btn"
+                >
+                  <p className={`[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] whitespace-nowrap transition-colors ${
+                    isActive ? 'text-[#034f5b]' : 'text-[#55606b]'
+                  }`}>
+                    {cat.label}
+                  </p>
+                </button>
+              );
+            })}
           </div>
           <div className="content-stretch flex flex-[1_0_0] flex-col items-start min-w-px overflow-clip relative" data-node-id="84:22" data-name="FAQ right">
-            <div className="[word-break:break-word] border-[#e7e5e1] border-b border-solid content-stretch flex flex-col gap-[12px] items-start not-italic overflow-clip py-[20px] relative shrink-0 w-full" data-node-id="84:23" data-name="faq-item">
-              <div className="content-stretch flex items-center justify-between leading-[normal] overflow-clip relative shrink-0 w-full whitespace-nowrap" data-node-id="84:24" data-name="q-row">
-                <p className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-[#062530] text-[15px]" data-node-id="84:25">
-                  Who can apply for financing?
-                </p>
-                <p className="font-['Inter:Bold'] font-bold relative shrink-0 text-[#034f5b] text-[16px]" data-node-id="84:26">
-                  −
-                </p>
-              </div>
-              <p className="font-['Inter:Regular'] font-normal leading-[1.5] relative shrink-0 text-[#55606b] text-[13.5px] w-[560px]" data-node-id="84:27">{`Nigerian individuals and registered businesses that meet Finbloom Capital's identity, income, cash-flow and credit-assessment requirements may apply.`}</p>
-            </div>
-            <div className="border-[#e7e5e1] border-b border-solid content-stretch flex flex-col items-start overflow-clip py-[20px] relative shrink-0 w-full" data-node-id="84:28" data-name="faq-item">
-              <div className="[word-break:break-word] content-stretch flex items-center justify-between leading-[normal] not-italic overflow-clip relative shrink-0 w-full whitespace-nowrap" data-node-id="84:29" data-name="q-row">
-                <p className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-[#062530] text-[15px]" data-node-id="84:30">
-                  What financing products does Finbloom offer?
-                </p>
-                <p className="font-['Inter:Bold'] font-bold relative shrink-0 text-[#034f5b] text-[16px]" data-node-id="84:31">
-                  +
-                </p>
-              </div>
-            </div>
-            <div className="border-[#e7e5e1] border-b border-solid content-stretch flex flex-col items-start overflow-clip py-[20px] relative shrink-0 w-full" data-node-id="84:32" data-name="faq-item">
-              <div className="[word-break:break-word] content-stretch flex items-center justify-between leading-[normal] not-italic overflow-clip relative shrink-0 w-full whitespace-nowrap" data-node-id="84:33" data-name="q-row">
-                <p className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-[#062530] text-[15px]" data-node-id="84:34">
-                  What documents will I need?
-                </p>
-                <p className="font-['Inter:Bold'] font-bold relative shrink-0 text-[#034f5b] text-[16px]" data-node-id="84:35">
-                  +
-                </p>
-              </div>
-            </div>
-            <div className="border-[#e7e5e1] border-b border-solid content-stretch flex flex-col items-start overflow-clip py-[20px] relative shrink-0 w-full" data-node-id="84:36" data-name="faq-item">
-              <div className="[word-break:break-word] content-stretch flex items-center justify-between leading-[normal] not-italic overflow-clip relative shrink-0 w-full whitespace-nowrap" data-node-id="84:37" data-name="q-row">
-                <p className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-[#062530] text-[15px]" data-node-id="84:38">
-                  How do I apply?
-                </p>
-                <p className="font-['Inter:Bold'] font-bold relative shrink-0 text-[#034f5b] text-[16px]" data-node-id="84:39">
-                  +
-                </p>
-              </div>
-            </div>
+            {filteredFaqs.length === 0 ? (
+              <p className="font-['Inter:Regular'] font-normal text-[#8b939c] text-[14px] py-[20px]">
+                No questions found. Try a different search or category.
+              </p>
+            ) : (
+              filteredFaqs.map((faq, index) => {
+                const isOpen = openFaq === index;
+                const numStr = (index + 1).toString().padStart(2, '0');
+                return (
+                  <div
+                    key={`${faq.cat}-${index}`}
+                    className="[word-break:break-word] border-[#e7e5e1] border-b border-solid content-stretch flex flex-col gap-[12px] items-start not-italic overflow-clip py-[20px] relative shrink-0 w-full cursor-pointer group transition-all"
+                    onClick={() => setOpenFaq(isOpen ? null : index)}
+                    data-name="faq-item"
+                  >
+                    <div className="content-stretch flex items-center justify-between leading-[normal] overflow-clip relative shrink-0 w-full" data-name="q-row">
+                      <p className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-[#062530] text-[15px] group-hover:text-[#034f5b] transition-colors pr-4">
+                        <span className="text-[#034f5b] mr-2">{numStr}.</span> {faq.q}
+                      </p>
+                      <p className="font-['Inter:Bold'] font-bold relative shrink-0 text-[#034f5b] text-[18px] leading-none flex-shrink-0">
+                        {isOpen ? '−' : '+'}
+                      </p>
+                    </div>
+                    {isOpen && (
+                      <p className="font-['Inter:Regular'] font-normal leading-[1.5] relative shrink-0 text-[#55606b] text-[13.5px] w-full max-w-[560px]">
+                        {faq.a}
+                      </p>
+                    )}
+                  </div>
+                );
+              })
+            )}
           </div>
         </div>
       </div>
