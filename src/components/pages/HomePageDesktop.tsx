@@ -421,7 +421,7 @@ export default function HomePageDesktop() {
             <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[1.45] not-italic relative shrink-0 text-[#55606b] text-[13.5px] w-[226px]" data-node-id="30:20">
               Unlock cash tied up in verified unpaid business invoices.
             </p>
-            <a href="/products" className="[word-break:break-word] block cursor-pointer font-['Inter:Semi_Bold'] font-semibold leading-[0] not-italic relative shrink-0 text-[#2c4e4e] text-[13px] whitespace-nowrap" data-node-id="30:21">
+            <a href="/invoice-finance-desktop" className="[word-break:break-word] block cursor-pointer font-['Inter:Semi_Bold'] font-semibold leading-[0] not-italic relative shrink-0 text-[#2c4e4e] text-[13px] whitespace-nowrap" data-node-id="30:21">
               <p className="leading-[normal] whitespace-pre">{`Learn more  →`}</p>
             </a>
           </div>
@@ -442,7 +442,7 @@ export default function HomePageDesktop() {
             <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[1.45] not-italic relative shrink-0 text-[#55606b] text-[13.5px] w-[226px]" data-node-id="30:26">
               Acquire vehicles, machinery, solar systems and productive assets.
             </p>
-            <a href="/products" className="[word-break:break-word] block cursor-pointer font-['Inter:Semi_Bold'] font-semibold leading-[0] not-italic relative shrink-0 text-[#81320d] text-[13px] whitespace-nowrap" data-node-id="30:27">
+            <a href="/asset-finance-desktop" className="[word-break:break-word] block cursor-pointer font-['Inter:Semi_Bold'] font-semibold leading-[0] not-italic relative shrink-0 text-[#81320d] text-[13px] whitespace-nowrap" data-node-id="30:27">
               <p className="leading-[normal] whitespace-pre">{`Learn more  →`}</p>
             </a>
           </div>
@@ -461,7 +461,7 @@ export default function HomePageDesktop() {
             <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[1.45] not-italic relative shrink-0 text-[#55606b] text-[13.5px] w-[226px]" data-node-id="30:32">
               Working capital for inventory, fulfilment and business expansion.
             </p>
-            <a href="/products" className="[word-break:break-word] block cursor-pointer font-['Inter:Semi_Bold'] font-semibold leading-[0] not-italic relative shrink-0 text-[#685216] text-[13px] whitespace-nowrap" data-node-id="30:33">
+            <a href="/sme-growth-loan-desktop" className="[word-break:break-word] block cursor-pointer font-['Inter:Semi_Bold'] font-semibold leading-[0] not-italic relative shrink-0 text-[#685216] text-[13px] whitespace-nowrap" data-node-id="30:33">
               <p className="leading-[normal] whitespace-pre">{`Learn more  →`}</p>
             </a>
           </div>
@@ -482,7 +482,7 @@ export default function HomePageDesktop() {
             <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[1.45] not-italic relative shrink-0 text-[#55606b] text-[13.5px] w-[226px]" data-node-id="230:1794">
               Insurance-backed lending product that bundles credit life or business interruption cover with each loan.
             </p>
-            <a href="/products" className="[word-break:break-word] block cursor-pointer font-['Inter:Semi_Bold'] font-semibold leading-[0] not-italic relative shrink-0 text-[#81320d] text-[13px] whitespace-nowrap" data-node-id="230:1795">
+            <a href="/finsure-loan-desktop" className="[word-break:break-word] block cursor-pointer font-['Inter:Semi_Bold'] font-semibold leading-[0] not-italic relative shrink-0 text-[#81320d] text-[13px] whitespace-nowrap" data-node-id="230:1795">
               <p className="leading-[normal] whitespace-pre">{`Learn more  →`}</p>
             </a>
           </div>
@@ -507,7 +507,7 @@ export default function HomePageDesktop() {
             <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[1.45] not-italic relative shrink-0 text-[#55606b] text-[13.5px] w-[226px]" data-node-id="230:1802">
               Investment-backed loans using fixed-income or equity securities as collateral via API integration.
             </p>
-            <a href="/products" className="[word-break:break-word] block cursor-pointer font-['Inter:Semi_Bold'] font-semibold leading-[0] not-italic relative shrink-0 text-[#2c4e4e] text-[13px] whitespace-nowrap" data-node-id="230:1803">
+            <a href="/secure-yield-loan-desktop" className="[word-break:break-word] block cursor-pointer font-['Inter:Semi_Bold'] font-semibold leading-[0] not-italic relative shrink-0 text-[#2c4e4e] text-[13px] whitespace-nowrap" data-node-id="230:1803">
               <p className="leading-[normal] whitespace-pre">{`Learn more  →`}</p>
             </a>
           </div>

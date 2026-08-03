@@ -97,7 +97,7 @@ export default function ProductsDesktop() {
             </div>
             <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Bold'] font-bold leading-[normal] relative shrink-0 text-[#062530] text-[16px] w-[226px]" data-node-id="113:178">Finbloom Invoice Finance</p>
             <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[1.45] not-italic relative shrink-0 text-[#55606b] text-[13px] w-[226px]" data-node-id="113:179">Unlock cash tied up in verified unpaid business invoices.</p>
-            <a href="/products" className="[word-break:break-word] block cursor-pointer font-['Inter:Semi_Bold'] font-semibold leading-[0] not-italic relative shrink-0 text-[#2c4e4e] text-[12.5px] whitespace-nowrap" data-node-id="113:180"><p className="leading-[normal] whitespace-pre">{`Learn more  →`}</p></a>
+            <a href="/invoice-finance-desktop" className="[word-break:break-word] block cursor-pointer font-['Inter:Semi_Bold'] font-semibold leading-[0] not-italic relative shrink-0 text-[#2c4e4e] text-[12.5px] whitespace-nowrap" data-node-id="113:180"><p className="leading-[normal] whitespace-pre">{`Learn more  →`}</p></a>
           </div>
           <div className="bg-white content-stretch flex flex-col gap-[14px] items-start overflow-clip px-[22px] py-[26px] relative rounded-[18px] w-full" data-node-id="113:181" data-name="card">
             <p className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[normal] not-italic relative shrink-0 text-[#8b939c] text-[12px] tracking-[0.12px] whitespace-nowrap" data-node-id="113:182">03</p>
@@ -110,7 +110,7 @@ export default function ProductsDesktop() {
             </div>
             <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Bold'] font-bold leading-[normal] relative shrink-0 text-[#062530] text-[16px] w-[226px]" data-node-id="113:184">Finbloom Asset Finance</p>
             <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[1.45] not-italic relative shrink-0 text-[#55606b] text-[13px] w-[226px]" data-node-id="113:185">Acquire vehicles, machinery, solar systems and productive assets.</p>
-            <a href="/products" className="[word-break:break-word] block cursor-pointer font-['Inter:Semi_Bold'] font-semibold leading-[0] not-italic relative shrink-0 text-[#81320d] text-[12.5px] whitespace-nowrap" data-node-id="113:186"><p className="leading-[normal] whitespace-pre">{`Learn more  →`}</p></a>
+            <a href="/asset-finance-desktop" className="[word-break:break-word] block cursor-pointer font-['Inter:Semi_Bold'] font-semibold leading-[0] not-italic relative shrink-0 text-[#81320d] text-[12.5px] whitespace-nowrap" data-node-id="113:186"><p className="leading-[normal] whitespace-pre">{`Learn more  →`}</p></a>
           </div>
           <div className="bg-white content-stretch flex flex-col gap-[14px] items-start overflow-clip px-[22px] py-[26px] relative rounded-[18px] w-full" data-node-id="113:187" data-name="card">
             <p className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[normal] not-italic relative shrink-0 text-[#8b939c] text-[12px] tracking-[0.12px] whitespace-nowrap" data-node-id="113:188">04</p>
@@ -121,7 +121,7 @@ export default function ProductsDesktop() {
             </div>
             <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Bold'] font-bold leading-[normal] relative shrink-0 text-[#062530] text-[16px] w-[226px]" data-node-id="113:190">Finbloom SME Growth Loan</p>
             <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[1.45] not-italic relative shrink-0 text-[#55606b] text-[13px] w-[226px]" data-node-id="113:191">Working capital for inventory, fulfilment and business expansion.</p>
-            <a href="/products" className="[word-break:break-word] block cursor-pointer font-['Inter:Semi_Bold'] font-semibold leading-[0] not-italic relative shrink-0 text-[#685216] text-[12.5px] whitespace-nowrap" data-node-id="113:192"><p className="leading-[normal] whitespace-pre">{`Learn more  →`}</p></a>
+            <a href="/sme-growth-loan-desktop" className="[word-break:break-word] block cursor-pointer font-['Inter:Semi_Bold'] font-semibold leading-[0] not-italic relative shrink-0 text-[#685216] text-[12.5px] whitespace-nowrap" data-node-id="113:192"><p className="leading-[normal] whitespace-pre">{`Learn more  →`}</p></a>
           </div>
           <div className="bg-white content-stretch flex flex-col gap-[14px] items-start overflow-clip px-[22px] py-[26px] relative rounded-[18px] w-full" data-node-id="181:2" data-name="card">
             <p className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[normal] not-italic relative shrink-0 text-[#8b939c] text-[12px] tracking-[0.12px] whitespace-nowrap" data-node-id="181:3">05</p>
@@ -134,7 +134,9 @@ export default function ProductsDesktop() {
             </div>
             <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Bold'] font-bold leading-[normal] relative shrink-0 text-[#062530] text-[16px] w-[226px]" data-node-id="181:5">FinSure Loan</p>
             <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[1.45] not-italic relative shrink-0 text-[#55606b] text-[13px] w-[226px]" data-node-id="181:6">Insurance-backed lending product that bundles credit life or business interruption cover with each loan.</p>
-            <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[#59388c] text-[12.5px] whitespace-pre" data-node-id="181:7">{`Learn more  →`}</p>
+            <a href="/finsure-loan-desktop" className="[word-break:break-word] block cursor-pointer font-['Inter:Semi_Bold'] font-semibold leading-[0] not-italic relative shrink-0 text-[#59388c] text-[12.5px] whitespace-nowrap" data-node-id="181:7">
+              <p className="leading-[normal] whitespace-pre">{`Learn more  →`}</p>
+            </a>
           </div>
           <div className="bg-white content-stretch flex flex-col gap-[14px] items-start overflow-clip px-[22px] py-[26px] relative rounded-[18px] w-full" data-node-id="181:8" data-name="card">
             <p className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[normal] not-italic relative shrink-0 text-[#8b939c] text-[12px] tracking-[0.12px] whitespace-nowrap" data-node-id="181:9">06</p>
@@ -151,7 +153,9 @@ export default function ProductsDesktop() {
             </div>
             <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Bold'] font-bold leading-[normal] relative shrink-0 text-[#062530] text-[16px] w-[226px]" data-node-id="181:11">SecureYield Loan</p>
             <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[1.45] not-italic relative shrink-0 text-[#55606b] text-[13px] w-[226px]" data-node-id="181:12">Investment-backed loans using fixed-income or equity securities as collateral via API integration.</p>
-            <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[#1a4780] text-[12.5px] whitespace-pre" data-node-id="181:13">{`Learn more  →`}</p>
+            <a href="/secure-yield-loan-desktop" className="[word-break:break-word] block cursor-pointer font-['Inter:Semi_Bold'] font-semibold leading-[0] not-italic relative shrink-0 text-[#1a4780] text-[12.5px] whitespace-nowrap" data-node-id="181:13">
+              <p className="leading-[normal] whitespace-pre">{`Learn more  →`}</p>
+            </a>
           </div>
         </div>
       </div>

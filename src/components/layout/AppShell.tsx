@@ -11,16 +11,16 @@ const EMAIL = 'info@finbloomcapital.com';
 const links = [
   { to: '/products', label: 'Products' },
   { to: '/about', label: 'About' },
-  { to: '/products', label: 'Learn' },
+  { to: '/learn-landing-page', label: 'Learn' },
   { to: '/', hash: '#faq', label: 'FAQs' },
   { to: '/', hash: '#contact', label: 'Contact' },
 ];
 
 const footerProductLinks = [
   { to: '/products/cashflow-flex', label: 'Cashflow Flex' },
-  { to: '/products', label: 'Invoice Finance' },
-  { to: '/products', label: 'Asset Finance' },
-  { to: '/products', label: 'SME Growth Loan' },
+  { to: '/invoice-finance-desktop', label: 'Invoice Finance' },
+  { to: '/asset-finance-desktop', label: 'Asset Finance' },
+  { to: '/sme-growth-loan-desktop', label: 'SME Growth Loan' },
 ];
 
 const footerCompanyLinks = [
