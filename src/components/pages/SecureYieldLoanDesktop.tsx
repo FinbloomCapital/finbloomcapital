@@ -142,10 +142,10 @@ export default function SecureYieldLoanDesktop() {
             <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[1.5] min-w-full not-italic relative shrink-0 text-[#55606b] text-[17px] w-[min-content]" data-node-id="220:1579">
               Leverage your qualifying fixed-yield investments as collateral to secure affordable, fast-tracked business loans, without liquidating your high-performing portfolio assets.
             </p>
-            <div className="bg-[#046675] content-stretch flex gap-[8px] items-center overflow-clip px-[28px] py-[14px] relative rounded-[100px] shrink-0 w-full md:w-auto" data-node-id="220:1580" data-name="apply-btn">
+            <a href="https://finbloom-capital-ltd.lsq.app/" target="_blank" rel="noopener noreferrer" className="bg-[#046675] content-stretch flex gap-[8px] items-center overflow-clip px-[28px] py-[14px] relative rounded-[100px] shrink-0 w-full md:w-auto" data-node-id="220:1580" data-name="apply-btn">
               <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[16px] text-white whitespace-nowrap" data-node-id="220:1581">Check eligibility</p>
               <div className="relative shrink-0 size-[18px]" data-node-id="220:1582" data-name="tabler:arrow-down"><img alt="" className="absolute block inset-0 max-w-none size-full" src={imgTablerArrowDown} /></div>
-            </div>
+            </a>
           </div>
           <div className="bg-[#062530] content-stretch flex flex-col h-[460px] items-start overflow-clip relative rounded-[28px] shadow-[0px_12px_32px_0px_rgba(20,23,28,0.14)] shrink-0 w-[500px]" data-node-id="220:1584" data-name="Hero right">
             <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgHeroRight} />
@@ -232,9 +232,9 @@ export default function SecureYieldLoanDesktop() {
             </div>
           </div>
         </div>
-        <div className="bg-[#046675] content-stretch flex items-center overflow-clip px-[26px] py-[14px] relative rounded-[100px] shrink-0 w-full md:w-auto" data-node-id="220:1687" data-name="apply-btn">
+        <a href="https://finbloom-capital-ltd.lsq.app/" target="_blank" rel="noopener noreferrer" className="bg-[#046675] content-stretch flex items-center overflow-clip px-[26px] py-[14px] relative rounded-[100px] shrink-0 w-full md:w-auto" data-node-id="220:1687" data-name="apply-btn">
           <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap" data-node-id="220:1688">Apply for Secure Yield Loan</p>
-        </div>
+        </a>
       </div>
       <div className="bg-[#faf9f6] content-stretch flex flex-col items-start overflow-clip pb-[80px] md:px-[80px] px-[20px] relative shrink-0 w-full" data-node-id="220:1689" data-name="Related">
         <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Bold'] font-bold leading-[normal] relative shrink-0 text-[#062530] text-[18px] whitespace-nowrap" data-node-id="220:1690">Explore other products</p>

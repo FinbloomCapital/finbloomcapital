@@ -45,7 +45,7 @@ export default function AboutDesktop() {
                   </p>
                 </div>
               </div>
-              <a href="https://finbloom-capital-ltd.lsq.app/login" target="_blank" rel="noopener noreferrer" className="bg-[var(--teal\/accent-dark,#034f5b)] content-stretch drop-shadow-[0px_10px_12px_rgba(6,37,48,0.15)] flex gap-[8px] h-[44px] items-center justify-center px-[18px] relative rounded-[100px] shrink-0" data-node-id="173:19" data-name="btn-primary">
+              <a href="https://finbloom-capital-ltd.lsq.app/" target="_blank" rel="noopener noreferrer" className="bg-[var(--teal\/accent-dark,#034f5b)] content-stretch drop-shadow-[0px_10px_12px_rgba(6,37,48,0.15)] flex gap-[8px] h-[44px] items-center justify-center px-[18px] relative rounded-[100px] shrink-0" data-node-id="173:19" data-name="btn-primary">
                 <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Bold'] font-bold leading-[normal] relative shrink-0 text-[14px] text-white whitespace-nowrap" data-node-id="173:20">Start your application</p>
                 <div className="relative shrink-0 size-[18px]" data-node-id="173:29" data-name="arrow-right"><img alt="" className="absolute block inset-0 max-w-none size-full" src={imgArrowRight} /></div>
               </a>

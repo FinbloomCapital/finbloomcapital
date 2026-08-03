@@ -157,9 +157,9 @@ export default function ArticleDetailPage() {
             <p className="[word-break:break-word] font-[\'Inter:Regular\'] font-normal leading-[1.5] min-w-full not-italic opacity-80 relative shrink-0 text-[#55606b] text-[14px] w-[min-content]" data-node-id="226:1768">
               Get up to ₦10M in fast, collateral-free invoice financing or SME growth capital with Finbloom.
             </p>
-            <div className="bg-white content-stretch flex items-center justify-center px-[16px] py-[12px] relative rounded-[100px] shrink-0 w-full" data-node-id="226:1769" data-name="Frame">
+            <a href="https://finbloom-capital-ltd.lsq.app/" target="_blank" rel="noopener noreferrer" className="bg-white content-stretch flex items-center justify-center px-[16px] py-[12px] relative rounded-[100px] shrink-0 w-full" data-node-id="226:1769" data-name="Frame">
               <p className="[word-break:break-word] font-[\'Inter:Bold\'] font-bold leading-[normal] not-italic relative shrink-0 text-[#034f5b] text-[14px] whitespace-nowrap" data-node-id="226:1770">Apply for financing</p>
-            </div>
+            </a>
           </div>
         </div>
       </div>

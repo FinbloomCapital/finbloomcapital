@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSmoothScroll } from '../shared/SmoothScrollProvider';
 
-const applicationUrl = 'https://finbloom-capital-ltd.lsq.app/login';
+const applicationUrl = 'https://finbloom-capital-ltd.lsq.app/';
 const NEW_PHONE = '+234 704 823 2127';
 const ADDRESS = '29, Ogayemi Close, Yaba';
 const EMAIL = 'info@finbloomcapital.com';

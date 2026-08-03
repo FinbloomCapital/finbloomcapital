@@ -47,10 +47,10 @@ export default function SmeGrowthLoanDesktop() {
             <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[1.5] not-italic relative shrink-0 text-[#55606b] text-[17px] w-[520px]" data-node-id="166:21">
               Inventory, fulfilment, staffing or a new location, working capital sized to your growth plans.
             </p>
-            <div className="bg-[#046675] content-stretch flex gap-[8px] items-center overflow-clip px-[26px] py-[14px] relative rounded-[100px] shrink-0 w-full md:w-auto" data-node-id="187:25" data-name="apply-btn">
+            <a href="https://finbloom-capital-ltd.lsq.app/" target="_blank" rel="noopener noreferrer" className="bg-[#046675] content-stretch flex gap-[8px] items-center overflow-clip px-[26px] py-[14px] relative rounded-[100px] shrink-0 w-full md:w-auto" data-node-id="187:25" data-name="apply-btn">
               <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[16px] text-white whitespace-nowrap" data-node-id="187:26">Check eligibility</p>
               <div className="relative shrink-0 size-[18px]" data-node-id="187:27" data-name="tabler:arrow-down"><img alt="" className="absolute block inset-0 max-w-none size-full" src={imgTablerArrowDown} /></div>
-            </div>
+            </a>
           </div>
           <div className="content-stretch flex flex-col gap-[24px] items-start overflow-clip relative shrink-0 w-[520px]" data-node-id="166:24" data-name="Hero right">
             <div className="bg-[#062530] content-stretch flex flex-col h-[420px] items-start overflow-clip relative rounded-[28px] shadow-[0px_12px_32px_0px_rgba(20,23,28,0.14)] shrink-0 w-full" data-node-id="190:14" data-name="Working capital dashboard illustration">
@@ -143,9 +143,9 @@ export default function SmeGrowthLoanDesktop() {
             <p className="font-['Inter:Regular'] font-normal relative shrink-0 text-[#55606b] text-[13px]" data-node-id="166:48">A short statement of intended use of funds</p>
           </div>
         </div>
-        <div className="bg-[#046675] content-stretch flex items-center overflow-clip px-[26px] py-[14px] relative rounded-[100px] shrink-0 w-full md:w-auto" data-node-id="187:36" data-name="apply-btn">
+        <a href="https://finbloom-capital-ltd.lsq.app/" target="_blank" rel="noopener noreferrer" className="bg-[#046675] content-stretch flex items-center overflow-clip px-[26px] py-[14px] relative rounded-[100px] shrink-0 w-full md:w-auto" data-node-id="187:36" data-name="apply-btn">
           <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap" data-node-id="187:37">Apply for this product</p>
-        </div>
+        </a>
       </div>
       <div className="bg-[#faf9f6] content-stretch flex flex-col items-start overflow-clip pb-[80px] md:px-[80px] px-[20px] relative shrink-0 w-full" data-node-id="166:49" data-name="Related">
         <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Bold'] font-bold leading-[normal] relative shrink-0 text-[#062530] text-[18px] whitespace-nowrap" data-node-id="166:50">Explore other products</p>

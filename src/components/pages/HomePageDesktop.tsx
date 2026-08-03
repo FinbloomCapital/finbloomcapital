@@ -295,7 +295,7 @@ export default function HomePageDesktop() {
               Responsible financing solutions that help Nigerian individuals and businesses strengthen cash flow, seize opportunities and grow with confidence.
             </p>
             <div className="content-stretch flex gap-[20px] items-center overflow-clip relative shrink-0" data-node-id="29:24" data-name="Hero CTAs">
-              <a href="https://finbloom-capital-ltd.lsq.app/login" target="_blank" rel="noopener noreferrer" className="bg-[#046675] content-stretch flex items-center justify-center px-[28px] py-[14px] relative rounded-[100px] shrink-0" data-node-id="204:16" data-name="Button">
+              <a href="https://finbloom-capital-ltd.lsq.app/" target="_blank" rel="noopener noreferrer" className="bg-[#046675] content-stretch flex items-center justify-center px-[28px] py-[14px] relative rounded-[100px] shrink-0" data-node-id="204:16" data-name="Button">
                 <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14.5px] text-left text-white whitespace-nowrap" data-node-id="I204:16;204:6">
                   Apply for financing
                 </p>
@@ -689,7 +689,7 @@ export default function HomePageDesktop() {
             </p>
           </div>
           <div className="content-stretch flex flex-col gap-[12px] items-center relative shrink-0" data-node-id="254:1789" data-name="Action container">
-            <a className="bg-[var(--warm\/yellow,#f8c535)] content-stretch cursor-pointer flex items-center justify-center px-[28px] py-[14px] relative rounded-[100px] shrink-0" href="https://finbloom-capital-ltd.lsq.app/login" data-node-id="204:18" target="_blank" rel="noopener noreferrer" data-name="Button">
+            <a className="bg-[var(--warm\/yellow,#f8c535)] content-stretch cursor-pointer flex items-center justify-center px-[28px] py-[14px] relative rounded-[100px] shrink-0" href="https://finbloom-capital-ltd.lsq.app/" data-node-id="204:18" target="_blank" rel="noopener noreferrer" data-name="Button">
               <p className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[normal] not-italic relative shrink-0 text-[16px] text-left text-white whitespace-nowrap" data-node-id="I204:18;204:4">
                 Sign up for a loan
               </p>
@@ -780,7 +780,7 @@ export default function HomePageDesktop() {
           <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:ExtraBold'] font-extrabold leading-[normal] relative shrink-0 text-[22px] text-white w-[480px]" data-node-id="I204:62;85:4">
             Ready to grow your business with flexible financing?
           </p>
-          <a className="bg-[#046675] content-stretch cursor-pointer flex items-center justify-center px-[28px] py-[14px] relative rounded-[100px] shrink-0" href="https://finbloom-capital-ltd.lsq.app/login" data-node-id="I204:62;204:22" target="_blank" rel="noopener noreferrer" data-name="Button">
+          <a className="bg-[#046675] content-stretch cursor-pointer flex items-center justify-center px-[28px] py-[14px] relative rounded-[100px] shrink-0" href="https://finbloom-capital-ltd.lsq.app/" data-node-id="I204:62;204:22" target="_blank" rel="noopener noreferrer" data-name="Button">
             <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14.5px] text-left text-white whitespace-nowrap" data-node-id="I204:62;204:22;204:6">
               Apply for financing
             </p>

@@ -105,7 +105,7 @@ export default function CashflowFlexDesktop() {
             <p className="font-['Inter:Regular'] font-normal relative shrink-0 text-[#55606b] text-[13px]" data-node-id="114:49">CAC documents, where applicable</p>
           </div>
         </div>
-        <a href="https://finbloom-capital-ltd.lsq.app/login" target="_blank" rel="noopener noreferrer" className="bg-[#046675] content-stretch flex items-center overflow-clip px-[26px] py-[14px] relative rounded-[100px] shrink-0" data-node-id="147:2" data-name="apply-btn">
+        <a href="https://finbloom-capital-ltd.lsq.app/" target="_blank" rel="noopener noreferrer" className="bg-[#046675] content-stretch flex items-center overflow-clip px-[26px] py-[14px] relative rounded-[100px] shrink-0" data-node-id="147:2" data-name="apply-btn">
           <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap" data-node-id="147:3">Apply for this product</p>
         </a>
       </div>

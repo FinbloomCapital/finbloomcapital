@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const imgFinbloomLogoBackground = "https://www.figma.com/api/mcp/asset/49e9041b-1632-40c4-83c4-ac36226a7425";
 const imgGroup = "https://www.figma.com/api/mcp/asset/2db967f3-ead6-449b-abe9-9759e80528bf";
@@ -38,12 +39,12 @@ const categories = [
 ];
 
 const latestArticles = [
-  { thumb: imgThumbnail, cat: "FINANCING TIPS", title: "How to Choose the Right Financing for Your Growing Business", desc: "Not all capital is created equal. Learn the structural differences between Invoice Factoring and SME Growth Loans.", author: "Timothy Adeyemi", date: "Feb 28, 2026" },
-  { thumb: imgThumbnail1, cat: "BUSINESS GROWTH", title: "Scaling Your Distribution Network Across Southwest Nigeria", desc: "Strategic distribution planning is key. Here are the 5 logistics traps to avoid when expanding beyond Lagos.", author: "Faith Adeyemi", date: "Feb 24, 2026" },
-  { thumb: imgThumbnail2, cat: "CASH FLOW", title: "Understanding Your Working Capital Cycle: A Simple Blueprint", desc: "A simple formula to accurately calculate how long your cash is locked up in business inventory and unpaid receivables.", author: "Oluwaseun Adebayo", date: "Feb 20, 2026" },
-  { thumb: imgThumbnail3, cat: "INDUSTRY NEWS", title: "Lagos SME Regulation Changes in 2026: What You Need to Know", desc: "A comprehensive summary of the latest licensing, compliance framework, and tax policy updates affecting retail businesses.", author: "Adewunmi Obadina", date: "Feb 15, 2026" },
-  { thumb: imgThumbnail4, cat: "GUIDES", title: "Financing Productive Assets: Why Solar Energy is a Smart SME Move", desc: "Tired of generator diesel costs? Here is how solar equipment leasing paybacks can quickly boost your operating margin.", author: "Ayodeji Peters", date: "Feb 11, 2026" },
-  { thumb: imgThumbnail5, cat: "CASH FLOW", title: "6 Invoicing Best Practices to Shorten Your Payment Terms", desc: "Simple, highly actionable updates you can make to your invoice templates to ensure prompt customer responses and transfers.", author: "Timothy Adeyemi", date: "Feb 05, 2026" },
+  { id: "choosing-right-financing", thumb: imgThumbnail, cat: "FINANCING TIPS", title: "How to Choose the Right Financing for Your Growing Business", desc: "Not all capital is created equal. Learn the structural differences between Invoice Factoring and SME Growth Loans.", author: "Timothy Adeyemi", date: "Feb 28, 2026" },
+  { id: "scaling-distribution-network", thumb: imgThumbnail1, cat: "BUSINESS GROWTH", title: "Scaling Your Distribution Network Across Southwest Nigeria", desc: "Strategic distribution planning is key. Here are the 5 logistics traps to avoid when expanding beyond Lagos.", author: "Faith Adeyemi", date: "Feb 24, 2026" },
+  { id: "working-capital-cycle-blueprint", thumb: imgThumbnail2, cat: "CASH FLOW", title: "Understanding Your Working Capital Cycle: A Simple Blueprint", desc: "A simple formula to accurately calculate how long your cash is locked up in business inventory and unpaid receivables.", author: "Oluwaseun Adebayo", date: "Feb 20, 2026" },
+  { id: "lagos-sme-regulation-changes-2026", thumb: imgThumbnail3, cat: "INDUSTRY NEWS", title: "Lagos SME Regulation Changes in 2026: What You Need to Know", desc: "A comprehensive summary of the latest licensing, compliance framework, and tax policy updates affecting retail businesses.", author: "Adewunmi Obadina", date: "Feb 15, 2026" },
+  { id: "solar-energy-asset-finance", thumb: imgThumbnail4, cat: "GUIDES", title: "Financing Productive Assets: Why Solar Energy is a Smart SME Move", desc: "Tired of generator diesel costs? Here is how solar equipment leasing paybacks can quickly boost your operating margin.", author: "Ayodeji Peters", date: "Feb 11, 2026" },
+  { id: "invoicing-best-practices", thumb: imgThumbnail5, cat: "CASH FLOW", title: "6 Invoicing Best Practices to Shorten Your Payment Terms", desc: "Simple, highly actionable updates you can make to your invoice templates to ensure prompt customer responses and transfers.", author: "Timothy Adeyemi", date: "Feb 05, 2026" },
 ];
 
 function Footer({ className }: { className?: string }) {
@@ -205,7 +206,7 @@ export default function LearnLandingPage() {
         </div>
       </div>
       <div className="content-stretch flex flex-col items-start pb-[80px] md:px-[120px] px-[20px] relative shrink-0 w-full" data-node-id="225:1590" data-name="Featured Article Section">
-        <div className="bg-white border border-[#e7e5e1] border-solid content-stretch flex items-start overflow-clip relative rounded-[24px] shrink-0 w-full">
+        <Link to="/article-detail/cash-flow-management-guide" className="bg-white border border-[#e7e5e1] border-solid content-stretch flex items-start overflow-clip relative rounded-[24px] shrink-0 w-full transition hover:border-[#046675] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#046675] focus-visible:ring-offset-2 focus-visible:ring-offset-[#faf9f6]">
           <div className="flex-[1_0_0] h-[420px] min-w-px relative">
             <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgFeaturedImage} />
           </div>
@@ -235,7 +236,7 @@ export default function LearnLandingPage() {
               </div>
             </div>
           </div>
-        </div>
+        </Link>
       </div>
       <div className="bg-white border-[#e7e5e1] border-b border-solid border-t content-stretch flex flex-col gap-[40px] items-start md:px-[120px] px-[20px] py-[80px] relative shrink-0 w-full" data-node-id="225:1607" data-name="Latest Articles Section">
         <div className="[word-break:break-word] content-stretch flex flex-col gap-[12px] items-start leading-[normal] relative shrink-0 w-full whitespace-nowrap">
@@ -244,18 +245,14 @@ export default function LearnLandingPage() {
         </div>
         <div className="grid grid-cols-2 gap-[16px] md:gap-[24px] lg:grid-cols-3 relative shrink-0 w-full" data-node-id="225:1611" data-name="Articles Grid">
           {visibleArticles.map((a, i) => (
-            <div key={`${a.cat}-${a.title}-${i}`} className="bg-white border border-[#e7e5e1] border-solid content-stretch flex flex-col items-start overflow-clip relative rounded-[16px] min-w-0 w-full">
+            <Link key={`${a.cat}-${a.title}-${i}`} to={`/article-detail/${a.id}`} className="bg-white border border-[#e7e5e1] border-solid content-stretch flex flex-col items-start overflow-clip relative rounded-[16px] min-w-0 w-full transition hover:border-[#046675] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#046675] focus-visible:ring-offset-2">
               <div className="aspect-[16/10] relative shrink-0 w-full">
                 <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={a.thumb} />
               </div>
               <div className="content-stretch flex flex-col gap-[10px] md:gap-[12px] items-start p-[14px] sm:p-[18px] md:p-[24px] relative shrink-0 w-full">
-                <button
-                  type="button"
-                  onClick={() => setActiveCategory(categories.find((category) => category.toUpperCase() === a.cat) ?? 'All')}
-                  className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[normal] not-italic relative shrink-0 text-[#eb5b18] text-[11px] md:text-[12px] tracking-[0.12px] text-left w-full"
-                >
+                <p className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[normal] not-italic relative shrink-0 text-[#eb5b18] text-[11px] md:text-[12px] tracking-[0.12px] text-left w-full">
                   {a.cat}
-                </button>
+                </p>
                 <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:ExtraBold'] font-extrabold leading-[1.3] overflow-hidden relative shrink-0 text-[#062530] text-[14px] sm:text-[16px] md:text-[18px] text-ellipsis w-full">{a.title}</p>
                 <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[1.5] not-italic overflow-hidden relative shrink-0 text-[#55606b] text-[12px] sm:text-[13px] md:text-[14px] text-ellipsis w-full">{a.desc}</p>
                 <div className="h-0 relative shrink-0 w-full">
@@ -266,7 +263,7 @@ export default function LearnLandingPage() {
                   <p className="font-['Inter:Regular'] font-normal relative shrink-0 text-[#8b939c]">{a.date}</p>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
