@@ -1,3 +1,5 @@
+import { useMemo, useState } from 'react';
+
 const imgFinbloomLogoBackground = "https://www.figma.com/api/mcp/asset/49e9041b-1632-40c4-83c4-ac36226a7425";
 const imgGroup = "https://www.figma.com/api/mcp/asset/2db967f3-ead6-449b-abe9-9759e80528bf";
 const imgGroup1 = "https://www.figma.com/api/mcp/asset/ea27674d-a4c9-4939-a71e-cee62f8cbadb";
@@ -25,6 +27,24 @@ const imgFile = "https://www.figma.com/api/mcp/asset/e04de64c-c644-40ed-8f5e-3fc
 const imgDownload = "https://www.figma.com/api/mcp/asset/642c3613-7726-4c48-80a1-f0f3213ea593";
 const imgChartColumn = "https://www.figma.com/api/mcp/asset/6f80b1c4-b429-417f-bbb1-70951add62e8";
 const imgReceipt = "https://www.figma.com/api/mcp/asset/d8dc5c0e-275b-45c8-835b-7ea018a04b91";
+
+const categories = [
+  'All',
+  'Business Growth',
+  'Financing Tips',
+  'Cash Flow',
+  'Industry News',
+  'Guides',
+];
+
+const latestArticles = [
+  { thumb: imgThumbnail, cat: "FINANCING TIPS", title: "How to Choose the Right Financing for Your Growing Business", desc: "Not all capital is created equal. Learn the structural differences between Invoice Factoring and SME Growth Loans.", author: "Timothy Adeyemi", date: "Feb 28, 2026" },
+  { thumb: imgThumbnail1, cat: "BUSINESS GROWTH", title: "Scaling Your Distribution Network Across Southwest Nigeria", desc: "Strategic distribution planning is key. Here are the 5 logistics traps to avoid when expanding beyond Lagos.", author: "Faith Adeyemi", date: "Feb 24, 2026" },
+  { thumb: imgThumbnail2, cat: "CASH FLOW", title: "Understanding Your Working Capital Cycle: A Simple Blueprint", desc: "A simple formula to accurately calculate how long your cash is locked up in business inventory and unpaid receivables.", author: "Oluwaseun Adebayo", date: "Feb 20, 2026" },
+  { thumb: imgThumbnail3, cat: "INDUSTRY NEWS", title: "Lagos SME Regulation Changes in 2026: What You Need to Know", desc: "A comprehensive summary of the latest licensing, compliance framework, and tax policy updates affecting retail businesses.", author: "Adewunmi Obadina", date: "Feb 15, 2026" },
+  { thumb: imgThumbnail4, cat: "GUIDES", title: "Financing Productive Assets: Why Solar Energy is a Smart SME Move", desc: "Tired of generator diesel costs? Here is how solar equipment leasing paybacks can quickly boost your operating margin.", author: "Ayodeji Peters", date: "Feb 11, 2026" },
+  { thumb: imgThumbnail5, cat: "CASH FLOW", title: "6 Invoicing Best Practices to Shorten Your Payment Terms", desc: "Simple, highly actionable updates you can make to your invoice templates to ensure prompt customer responses and transfers.", author: "Timothy Adeyemi", date: "Feb 05, 2026" },
+];
 
 function Footer({ className }: { className?: string }) {
   return (
@@ -145,6 +165,12 @@ function Header({ className }: { className?: string }) {
 }
 
 export default function LearnLandingPage() {
+  const [activeCategory, setActiveCategory] = useState('All');
+  const visibleArticles = useMemo(() => {
+    if (activeCategory === 'All') return latestArticles;
+    return latestArticles.filter((article) => article.cat === activeCategory.toUpperCase());
+  }, [activeCategory]);
+
   return (
     <div className="bg-[#faf9f6] content-stretch flex flex-col items-start relative size-full" data-node-id="225:1533" data-name="learn-landing-page">
 
@@ -156,24 +182,26 @@ export default function LearnLandingPage() {
           </p>
         </div>
         <div className="content-start flex flex-wrap gap-[12px] items-start justify-center relative shrink-0 w-full" data-node-id="225:1577" data-name="Category Bar">
-          <div className="bg-[#046675] content-stretch flex items-start px-[20px] py-[10px] relative rounded-[100px] shrink-0">
-            <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap">All</p>
-          </div>
-          <div className="bg-white border border-[#e7e5e1] border-solid content-stretch flex items-start px-[20px] py-[10px] relative rounded-[100px] shrink-0">
-            <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[#55606b] text-[14px] whitespace-nowrap">Business Growth</p>
-          </div>
-          <div className="bg-white border border-[#e7e5e1] border-solid content-stretch flex items-start px-[20px] py-[10px] relative rounded-[100px] shrink-0">
-            <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[#55606b] text-[14px] whitespace-nowrap">Financing Tips</p>
-          </div>
-          <div className="bg-white border border-[#e7e5e1] border-solid content-stretch flex items-start px-[20px] py-[10px] relative rounded-[100px] shrink-0">
-            <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[#55606b] text-[14px] whitespace-nowrap">Cash Flow</p>
-          </div>
-          <div className="bg-white border border-[#e7e5e1] border-solid content-stretch flex items-start px-[20px] py-[10px] relative rounded-[100px] shrink-0">
-            <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[#55606b] text-[14px] whitespace-nowrap">Industry News</p>
-          </div>
-          <div className="bg-white border border-[#e7e5e1] border-solid content-stretch flex items-start px-[20px] py-[10px] relative rounded-[100px] shrink-0">
-            <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[#55606b] text-[14px] whitespace-nowrap">Guides</p>
-          </div>
+          {categories.map((category) => {
+            const isActive = activeCategory === category;
+            return (
+              <button
+                key={category}
+                type="button"
+                aria-pressed={isActive}
+                onClick={() => setActiveCategory(category)}
+                className={`content-stretch flex items-start px-[20px] py-[10px] relative rounded-[100px] shrink-0 transition ${
+                  isActive
+                    ? 'bg-[#046675] text-white'
+                    : 'bg-white border border-[#e7e5e1] border-solid text-[#55606b] hover:border-[#046675] hover:text-[#046675]'
+                }`}
+              >
+                <span className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] whitespace-nowrap">
+                  {category}
+                </span>
+              </button>
+            );
+          })}
         </div>
       </div>
       <div className="content-stretch flex flex-col items-start pb-[80px] md:px-[120px] px-[20px] relative shrink-0 w-full" data-node-id="225:1590" data-name="Featured Article Section">
@@ -214,27 +242,26 @@ export default function LearnLandingPage() {
           <p className="font-['Inter:Bold'] font-bold not-italic relative shrink-0 text-[#046675] text-[14px] tracking-[1px]">LATEST INSIGHTS</p>
           <p className="font-['Plus_Jakarta_Sans:ExtraBold'] font-extrabold relative shrink-0 text-[#062530] text-[32px]">Fresh updates from our financial experts</p>
         </div>
-        <div className="content-start flex flex-wrap gap-[24px] items-start relative shrink-0 w-full" data-node-id="225:1611" data-name="Articles Grid">
-          {[
-            { thumb: imgThumbnail, cat: "FINANCING TIPS", title: "How to Choose the Right Financing for Your Growing Business", desc: "Not all capital is created equal. Learn the structural differences between Invoice Factoring and SME Growth Loans.", author: "Timothy Adeyemi", date: "Feb 28, 2026" },
-            { thumb: imgThumbnail1, cat: "BUSINESS GROWTH", title: "Scaling Your Distribution Network Across Southwest Nigeria", desc: "Strategic distribution planning is key. Here are the 5 logistics traps to avoid when expanding beyond Lagos.", author: "Faith Adeyemi", date: "Feb 24, 2026" },
-            { thumb: imgThumbnail2, cat: "CASH FLOW", title: "Understanding Your Working Capital Cycle: A Simple Blueprint", desc: "A simple formula to accurately calculate how long your cash is locked up in business inventory and unpaid receivables.", author: "Oluwaseun Adebayo", date: "Feb 20, 2026" },
-            { thumb: imgThumbnail3, cat: "INDUSTRY NEWS", title: "Lagos SME Regulation Changes in 2026: What You Need to Know", desc: "A comprehensive summary of the latest licensing, compliance framework, and tax policy updates affecting retail businesses.", author: "Adewunmi Obadina", date: "Feb 15, 2026" },
-            { thumb: imgThumbnail4, cat: "GUIDES", title: "Financing Productive Assets: Why Solar Energy is a Smart SME Move", desc: "Tired of generator diesel costs? Here is how solar equipment leasing paybacks can quickly boost your operating margin.", author: "Ayodeji Peters", date: "Feb 11, 2026" },
-            { thumb: imgThumbnail5, cat: "CASH FLOW", title: "6 Invoicing Best Practices to Shorten Your Payment Terms", desc: "Simple, highly actionable updates you can make to your invoice templates to ensure prompt customer responses and transfers.", author: "Timothy Adeyemi", date: "Feb 05, 2026" },
-          ].map((a, i) => (
-            <div key={i} className="bg-white border border-[#e7e5e1] border-solid content-stretch flex flex-col items-start overflow-clip relative rounded-[16px] shrink-0 w-[384px]">
+        <div className="grid grid-cols-2 gap-[16px] md:gap-[24px] lg:grid-cols-3 relative shrink-0 w-full" data-node-id="225:1611" data-name="Articles Grid">
+          {visibleArticles.map((a, i) => (
+            <div key={`${a.cat}-${a.title}-${i}`} className="bg-white border border-[#e7e5e1] border-solid content-stretch flex flex-col items-start overflow-clip relative rounded-[16px] min-w-0 w-full">
               <div className="aspect-[16/10] relative shrink-0 w-full">
                 <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={a.thumb} />
               </div>
-              <div className="content-stretch flex flex-col gap-[12px] items-start p-[24px] relative shrink-0 w-full">
-                <p className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[normal] not-italic relative shrink-0 text-[#eb5b18] text-[12px] tracking-[0.12px] w-full">{a.cat}</p>
-                <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:ExtraBold'] font-extrabold leading-[1.3] overflow-hidden relative shrink-0 text-[#062530] text-[18px] text-ellipsis w-full">{a.title}</p>
-                <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[1.5] not-italic overflow-hidden relative shrink-0 text-[#55606b] text-[14px] text-ellipsis w-full">{a.desc}</p>
+              <div className="content-stretch flex flex-col gap-[10px] md:gap-[12px] items-start p-[14px] sm:p-[18px] md:p-[24px] relative shrink-0 w-full">
+                <button
+                  type="button"
+                  onClick={() => setActiveCategory(categories.find((category) => category.toUpperCase() === a.cat) ?? 'All')}
+                  className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[normal] not-italic relative shrink-0 text-[#eb5b18] text-[11px] md:text-[12px] tracking-[0.12px] text-left w-full"
+                >
+                  {a.cat}
+                </button>
+                <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:ExtraBold'] font-extrabold leading-[1.3] overflow-hidden relative shrink-0 text-[#062530] text-[14px] sm:text-[16px] md:text-[18px] text-ellipsis w-full">{a.title}</p>
+                <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[1.5] not-italic overflow-hidden relative shrink-0 text-[#55606b] text-[12px] sm:text-[13px] md:text-[14px] text-ellipsis w-full">{a.desc}</p>
                 <div className="h-0 relative shrink-0 w-full">
                   <div className="absolute inset-[-1px_0_0_0]"><img alt="" className="block max-w-none size-full" src={imgLine1} /></div>
                 </div>
-                <div className="[word-break:break-word] content-stretch flex items-center justify-between leading-[normal] not-italic relative shrink-0 text-[13px] w-full whitespace-nowrap">
+                <div className="[word-break:break-word] content-stretch flex flex-col gap-[4px] sm:flex-row sm:items-center sm:justify-between leading-[normal] not-italic relative shrink-0 text-[11px] sm:text-[12px] md:text-[13px] w-full">
                   <p className="font-['Inter:Medium'] font-medium relative shrink-0 text-[#55606b]">{a.author}</p>
                   <p className="font-['Inter:Regular'] font-normal relative shrink-0 text-[#8b939c]">{a.date}</p>
                 </div>
