@@ -45,15 +45,37 @@ reads through Sanity's CDN).
 - **Resources** without an uploaded file show the button label greyed out rather
   than a dead link.
 
-## Deploying the Studio
+## Where editors work
+
+The Studio is deployed to Sanity's hosting, so editors never touch the repo or a
+terminal. They sign in at **[sanity.io/welcome](https://www.sanity.io/welcome)**
+and open *Finbloom Capital* — the Studio runs inside the Dashboard.
+
+`https://finbloom.sanity.studio` redirects to that same place, so either link
+works.
+
+Note that **[sanity.io/manage](https://sanity.io/manage/project/hroyuvjy) is not
+an editing surface** — it is admin only (members, tokens, CORS, datasets, and a
+*Studios* tab). Content lives in the Dashboard.
+
+To give someone access: *Members → Invite* in sanity.io/manage, role **Editor**
+(read/write on all content, no access to tokens or project settings).
+
+## Redeploying the Studio
 
 ```bash
-npm run studio:deploy   # publishes to https://finbloom.sanity.studio
+npm run studio:deploy
 ```
 
-Change `studioHost` in [`studio/sanity.cli.ts`](./studio/sanity.cli.ts) if that
-hostname is taken. Editors then need inviting under
-*Members* in [sanity.io/manage](https://sanity.io/manage/project/hroyuvjy).
+Needed after any schema change in `studio/schemaTypes/` — the hosted Studio runs
+the build, not your local files. Requires either a `sanity login` session or a
+`SANITY_AUTH_TOKEN` holding a **Deploy Studio** token (created in sanity.io/manage
+→ API → Tokens); the narrow `deploy-studio` role is sufficient and preferable to
+an admin token.
+
+The target Studio is pinned by `deployment.appId` in
+[`studio/sanity.cli.ts`](./studio/sanity.cli.ts) — leave it alone unless you
+intend to create a separate Studio.
 
 ## First-time setup on a new machine
 
