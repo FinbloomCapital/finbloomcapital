@@ -400,7 +400,7 @@ export default function HomePageDesktop() {
               01
             </p>
             <div className="bg-[#e5eff1] overflow-clip relative rounded-[12px] shrink-0 size-[42px]" data-node-id="30:12" data-name="icon">
-              <img alt="" className="absolute block inset-0 max-w-none size-[24px]" src={imgHumbleiconsLineChart} />
+              <img alt="" className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 block max-w-none size-[24px]" src={imgHumbleiconsLineChart} />
             </div>
             <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Bold'] font-bold leading-[normal] relative shrink-0 text-[#062530] text-[16.5px] w-[226px]" data-node-id="30:13">
               Finbloom Cashflow Flex
@@ -417,7 +417,7 @@ export default function HomePageDesktop() {
               02
             </p>
             <div className="bg-[#e4f2f2] overflow-clip relative rounded-[12px] shrink-0 size-[42px]" data-node-id="30:18" data-name="icon">
-              <img alt="" className="absolute block inset-0 max-w-none size-[24px]" src={imgHugeiconsInvoice01} />
+              <img alt="" className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 block max-w-none size-[24px]" src={imgHugeiconsInvoice01} />
             </div>
             <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Bold'] font-bold leading-[normal] relative shrink-0 text-[#062530] text-[16.5px] w-[226px]" data-node-id="30:19">
               Finbloom Invoice Finance
@@ -434,7 +434,7 @@ export default function HomePageDesktop() {
               03
             </p>
             <div className="bg-[#fdf1ec] overflow-clip relative rounded-[12px] shrink-0 size-[42px]" data-node-id="30:24" data-name="icon">
-              <img alt="" className="absolute block inset-0 max-w-none size-[24px]" src={imgGroup} />
+              <img alt="" className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 block max-w-none size-[24px]" src={imgGroup} />
             </div>
             <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Bold'] font-bold leading-[normal] relative shrink-0 text-[#062530] text-[16.5px] w-[226px]" data-node-id="30:25">
               Finbloom Asset Finance
@@ -451,7 +451,7 @@ export default function HomePageDesktop() {
               04
             </p>
             <div className="bg-[#fdf6e0] overflow-clip relative rounded-[12px] shrink-0 size-[42px]" data-node-id="30:30" data-name="icon">
-              <img alt="" className="absolute block inset-0 max-w-none size-[24px]" src={imgPhBuildings} />
+              <img alt="" className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 block max-w-none size-[24px]" src={imgPhBuildings} />
             </div>
             <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Bold'] font-bold leading-[normal] relative shrink-0 text-[#062530] text-[16.5px] w-[226px]" data-node-id="30:31">
               Finbloom SME Growth Loan
@@ -468,7 +468,7 @@ export default function HomePageDesktop() {
               05
             </p>
             <div className="bg-[#fdf1ec] overflow-clip relative rounded-[12px] shrink-0 size-[42px]" data-node-id="230:1790" data-name="icon">
-              <img alt="" className="absolute block inset-0 max-w-none size-[24px]" src={imgGroup1} />
+              <img alt="" className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 block max-w-none size-[24px]" src={imgGroup1} />
             </div>
             <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Bold'] font-bold leading-[normal] relative shrink-0 text-[#062530] text-[16.5px] w-[226px]" data-node-id="230:1793">
               FinSure Loan
@@ -485,7 +485,7 @@ export default function HomePageDesktop() {
               06
             </p>
             <div className="bg-[#e4f2f2] overflow-clip relative rounded-[12px] shrink-0 size-[42px]" data-node-id="230:1798" data-name="icon">
-              <img alt="" className="absolute block inset-0 max-w-none size-[24px]" src="/img/hugeicons_lock-01.svg" />
+              <img alt="" className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 block max-w-none size-[24px]" src="/img/hugeicons_lock-01.svg" />
             </div>
             <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Bold'] font-bold leading-[normal] relative shrink-0 text-[#062530] text-[16.5px] w-[226px]" data-node-id="230:1801">
               SecureYield Loan

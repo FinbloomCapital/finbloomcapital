@@ -56,7 +56,7 @@ export default function ProductsDesktop() {
           <div className="bg-white content-stretch flex flex-col gap-[14px] items-start overflow-clip px-[22px] py-[26px] relative rounded-[18px] w-full" data-node-id="113:169" data-name="card">
             <p className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[normal] not-italic relative shrink-0 text-[#8b939c] text-[12px] tracking-[0.12px] whitespace-nowrap" data-node-id="113:170">01</p>
             <div className="bg-[#e5eff1] overflow-clip relative rounded-[12px] shrink-0 size-[42px]" data-node-id="113:171" data-name="icon">
-              <img alt="" className="absolute block inset-0 max-w-none size-[24px]" src={imgHumbleiconsLineChart} />
+              <img alt="" className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 block max-w-none size-[24px]" src={imgHumbleiconsLineChart} />
             </div>
             <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Bold'] font-bold leading-[normal] relative shrink-0 text-[#062530] text-[16px] w-[226px]" data-node-id="113:172">Finbloom Cashflow Flex</p>
             <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[1.45] not-italic relative shrink-0 text-[#55606b] text-[13px] w-[226px]" data-node-id="113:173">Pay interest monthly and repay the principal at maturity.</p>
@@ -65,7 +65,7 @@ export default function ProductsDesktop() {
           <div className="bg-white content-stretch flex flex-col gap-[14px] items-start overflow-clip px-[22px] py-[26px] relative rounded-[18px] w-full" data-node-id="113:175" data-name="card">
             <p className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[normal] not-italic relative shrink-0 text-[#8b939c] text-[12px] tracking-[0.12px] whitespace-nowrap" data-node-id="113:176">02</p>
             <div className="bg-[#e4f2f2] overflow-clip relative rounded-[12px] shrink-0 size-[42px]" data-node-id="113:177" data-name="icon">
-              <img alt="" className="absolute block inset-0 max-w-none size-[24px]" src={imgHugeiconsInvoice01} />
+              <img alt="" className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 block max-w-none size-[24px]" src={imgHugeiconsInvoice01} />
             </div>
             <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Bold'] font-bold leading-[normal] relative shrink-0 text-[#062530] text-[16px] w-[226px]" data-node-id="113:178">Finbloom Invoice Finance</p>
             <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[1.45] not-italic relative shrink-0 text-[#55606b] text-[13px] w-[226px]" data-node-id="113:179">Unlock cash tied up in verified unpaid business invoices.</p>
@@ -74,7 +74,7 @@ export default function ProductsDesktop() {
           <div className="bg-white content-stretch flex flex-col gap-[14px] items-start overflow-clip px-[22px] py-[26px] relative rounded-[18px] w-full" data-node-id="113:181" data-name="card">
             <p className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[normal] not-italic relative shrink-0 text-[#8b939c] text-[12px] tracking-[0.12px] whitespace-nowrap" data-node-id="113:182">03</p>
             <div className="bg-[#fdf1ec] overflow-clip relative rounded-[12px] shrink-0 size-[42px]" data-node-id="113:183" data-name="icon">
-              <img alt="" className="absolute block inset-0 max-w-none size-[24px]" src={imgGroup} />
+              <img alt="" className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 block max-w-none size-[24px]" src={imgGroup} />
             </div>
             <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Bold'] font-bold leading-[normal] relative shrink-0 text-[#062530] text-[16px] w-[226px]" data-node-id="113:184">Finbloom Asset Finance</p>
             <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[1.45] not-italic relative shrink-0 text-[#55606b] text-[13px] w-[226px]" data-node-id="113:185">Acquire vehicles, machinery, solar systems and productive assets.</p>
@@ -83,7 +83,7 @@ export default function ProductsDesktop() {
           <div className="bg-white content-stretch flex flex-col gap-[14px] items-start overflow-clip px-[22px] py-[26px] relative rounded-[18px] w-full" data-node-id="113:187" data-name="card">
             <p className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[normal] not-italic relative shrink-0 text-[#8b939c] text-[12px] tracking-[0.12px] whitespace-nowrap" data-node-id="113:188">04</p>
             <div className="bg-[#fdf6e0] overflow-clip relative rounded-[12px] shrink-0 size-[42px]" data-node-id="113:189" data-name="icon">
-              <img alt="" className="absolute block inset-0 max-w-none size-[24px]" src={imgPhBuildings} />
+              <img alt="" className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 block max-w-none size-[24px]" src={imgPhBuildings} />
             </div>
             <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Bold'] font-bold leading-[normal] relative shrink-0 text-[#062530] text-[16px] w-[226px]" data-node-id="113:190">Finbloom SME Growth Loan</p>
             <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[1.45] not-italic relative shrink-0 text-[#55606b] text-[13px] w-[226px]" data-node-id="113:191">Working capital for inventory, fulfilment and business expansion.</p>
@@ -92,7 +92,7 @@ export default function ProductsDesktop() {
           <div className="bg-white content-stretch flex flex-col gap-[14px] items-start overflow-clip px-[22px] py-[26px] relative rounded-[18px] w-full" data-node-id="181:2" data-name="card">
             <p className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[normal] not-italic relative shrink-0 text-[#8b939c] text-[12px] tracking-[0.12px] whitespace-nowrap" data-node-id="181:3">05</p>
             <div className="bg-[#fdf1ec] overflow-clip relative rounded-[12px] shrink-0 size-[42px]" data-node-id="181:4" data-name="icon">
-              <img alt="" className="absolute block inset-0 max-w-none size-[24px]" src={imgStreamlinePlumpInsuranceHand} />
+              <img alt="" className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 block max-w-none size-[24px]" src={imgStreamlinePlumpInsuranceHand} />
             </div>
             <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Bold'] font-bold leading-[normal] relative shrink-0 text-[#062530] text-[16px] w-[226px]" data-node-id="181:5">FinSure Loan</p>
             <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[1.45] not-italic relative shrink-0 text-[#55606b] text-[13px] w-[226px]" data-node-id="181:6">Insurance-backed lending product that bundles credit life or business interruption cover with each loan.</p>
@@ -103,7 +103,7 @@ export default function ProductsDesktop() {
           <div className="bg-white content-stretch flex flex-col gap-[14px] items-start overflow-clip px-[22px] py-[26px] relative rounded-[18px] w-full" data-node-id="181:8" data-name="card">
             <p className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[normal] not-italic relative shrink-0 text-[#8b939c] text-[12px] tracking-[0.12px] whitespace-nowrap" data-node-id="181:9">06</p>
             <div className="bg-[#e4f2f2] overflow-clip relative rounded-[12px] shrink-0 size-[42px]" data-node-id="181:10" data-name="icon">
-              <img alt="" className="absolute block inset-0 max-w-none size-[24px]" src="/img/hugeicons_lock-01.svg" />
+              <img alt="" className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 block max-w-none size-[24px]" src="/img/hugeicons_lock-01.svg" />
             </div>
             <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Bold'] font-bold leading-[normal] relative shrink-0 text-[#062530] text-[16px] w-[226px]" data-node-id="181:11">SecureYield Loan</p>
             <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[1.45] not-italic relative shrink-0 text-[#55606b] text-[13px] w-[226px]" data-node-id="181:12">Investment-backed loans using fixed-income or equity securities as collateral via API integration.</p>
