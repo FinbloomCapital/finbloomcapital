@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const imgFinbloomLogoBackground = "https://www.figma.com/api/mcp/asset/c60d9163-9fbb-4224-80b0-67210af6a825";
 const imgGroup = "https://www.figma.com/api/mcp/asset/fceee887-056c-4ff8-9e55-0b9aa361f5b8";
 const imgGroup1 = "https://www.figma.com/api/mcp/asset/6f826b0d-b0d4-4b3f-a49b-b5e7d5ce5149";
@@ -6,8 +8,8 @@ const imgMdiInstagram = "https://www.figma.com/api/mcp/asset/2be7d0fe-d41c-44fc-
 const imgMdiLinkedin = "https://www.figma.com/api/mcp/asset/cfc300bf-d440-47e2-be81-d979c5ccf3f6";
 const imgFinbloomLogo1 = "https://www.figma.com/api/mcp/asset/2804a9d2-a55a-411f-a3cb-032b5ca90f51";
 const imgHeroRight = "https://www.figma.com/api/mcp/asset/a019f272-66af-4ada-9aed-83f16536e7ef";
-const imgTablerArrowDown = "https://www.figma.com/api/mcp/asset/44eec822-ca30-43eb-80c8-cecb001b044c";
-const imgGrid = "https://www.figma.com/api/mcp/asset/955b0a9a-2679-4b43-a814-559db4f2df91";
+const imgTablerArrowDown = "/img/tabler_arrow-down.svg";
+const imgGrid = "/img/Hero right asset finance.svg";
 const imgMaterialSymbolsCheck = "https://www.figma.com/api/mcp/asset/f6ffe184-72b2-47b1-a313-5c5a6c91004e";
 
 function Footer({ className }: { className?: string }) {
@@ -162,19 +164,8 @@ export default function AssetFinanceDesktop() {
               </div>
             </div>
           </div>
-          <div className="bg-[#062530] content-stretch flex flex-col h-[460px] items-start overflow-clip relative rounded-[28px] shadow-[0px_12px_32px_0px_rgba(20,23,28,0.14)] shrink-0 w-[500px]" data-node-id="165:571" data-name="Hero right">
-            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgHeroRight} />
-            <div className="absolute h-[460px] left-0 top-0 w-[500px]" data-node-id="189:5" data-name="Grid">
-              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgGrid} />
-            </div>
-            <div className="[word-break:break-word] absolute bg-white content-stretch flex flex-col gap-[6px] items-start leading-[normal] left-0 overflow-clip px-[18px] py-[16px] rounded-[18px] shadow-[0px_12px_32px_0px_rgba(20,23,28,0.14)] top-[2px] w-[196px] whitespace-nowrap" data-node-id="189:52" data-name="Float card - Asset Value">
-              <p className="font-['Inter:Semi_Bold'] font-semibold not-italic relative shrink-0 text-[#8b939c] text-[10.5px] tracking-[0.21px]" data-node-id="189:53">
-                ASSET VALUE
-              </p>
-              <p className="font-['Plus_Jakarta_Sans:ExtraBold'] font-extrabold relative shrink-0 text-[#062530] text-[21px]" data-node-id="189:54">
-                ₦12,500,000
-              </p>
-            </div>
+          <div className="bg-[#062530] content-stretch flex flex-col h-[460px] items-center justify-center overflow-clip relative rounded-[28px] shadow-[0px_12px_32px_0px_rgba(20,23,28,0.14)] shrink-0 w-[500px]" data-node-id="165:571" data-name="Hero right">
+            <img alt="" className="block w-full h-full object-contain" src={imgGrid} />
           </div>
         </div>
         <div className="absolute bg-white content-stretch flex gap-[10px] h-[76px] items-center left-[1024px] overflow-clip pl-[16px] pr-[18px] py-[14px] rounded-[16px] shadow-[0px_12px_32px_0px_rgba(20,23,28,0.14)] top-[502px]" data-node-id="189:55" data-name="Float card - Approved">

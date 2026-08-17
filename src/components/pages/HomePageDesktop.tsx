@@ -110,12 +110,12 @@ function TestimonialsCarousel() {
   };
 
   return (
-    <section className="bg-white content-stretch flex flex-col items-start overflow-clip p-[80px] relative shrink-0 w-full" data-node-id="32:2" data-name="Testimonials">
-      <div className="content-stretch flex flex-col gap-[14px] items-start overflow-clip relative shrink-0 w-[640px]" data-node-id="32:3" data-name="Section head">
-        <p className="font-['Plus_Jakarta_Sans:ExtraBold'] font-extrabold leading-[normal] relative shrink-0 text-[30px] text-[#2c4e4e] whitespace-nowrap" data-node-id="32:6">
+    <section className="bg-white content-stretch flex flex-col items-start overflow-clip md:p-[80px] p-[40px] relative shrink-0 w-full" data-node-id="32:2" data-name="Testimonials">
+      <div className="content-stretch flex flex-col gap-[14px] items-start overflow-clip relative shrink-0 md:w-[640px] w-full" data-node-id="32:3" data-name="Section head">
+        <p className="font-['Plus_Jakarta_Sans:ExtraBold'] font-extrabold leading-[normal] relative shrink-0 text-[30px] text-[#2c4e4e]">
           Testimonials
         </p>
-        <p className="font-['Inter:Regular'] font-normal leading-[1.45] not-italic relative shrink-0 text-[#55606b] text-[15px] w-[560px]" data-node-id="32:7">
+        <p className="font-['Inter:Regular'] font-normal leading-[1.45] not-italic relative shrink-0 text-[#55606b] text-[15px] md:w-[560px] w-full" data-node-id="32:7">
           A few of the individuals and business owners who&apos;ve financed their next step with us.
         </p>
       </div>

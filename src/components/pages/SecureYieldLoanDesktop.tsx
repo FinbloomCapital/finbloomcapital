@@ -6,8 +6,8 @@ const imgMdiInstagram = "https://www.figma.com/api/mcp/asset/3b918838-82f9-492f-
 const imgMdiLinkedin = "https://www.figma.com/api/mcp/asset/c3cf3c7e-3dda-4b8f-83a8-af891f2132ca";
 const imgFinbloomLogo1 = "https://www.figma.com/api/mcp/asset/5e0e227c-5970-4fe5-b2a1-338d8a3b572d";
 const imgHeroRight = "https://www.figma.com/api/mcp/asset/2af2e4ae-4829-4aae-a63d-e35d2cf07c38";
-const imgTablerArrowDown = "https://www.figma.com/api/mcp/asset/7b623997-8850-499d-8eb6-828174615739";
-const imgGrid = "https://www.figma.com/api/mcp/asset/73724a0b-b149-48e7-9427-aa4b40b01f28";
+const imgTablerArrowDown = "/img/tabler_arrow-down.svg";
+const imgGrid = "/img/Secure-yield.svg";
 const imgMaterialSymbolsCheck = "https://www.figma.com/api/mcp/asset/12984f3e-7bda-425e-839c-00f3ed288a51";
 
 function Footer({ className }: { className?: string }) {
@@ -147,15 +147,8 @@ export default function SecureYieldLoanDesktop() {
               <div className="relative shrink-0 size-[18px]" data-node-id="220:1582" data-name="tabler:arrow-down"><img alt="" className="absolute block inset-0 max-w-none size-full" src={imgTablerArrowDown} /></div>
             </a>
           </div>
-          <div className="bg-[#062530] content-stretch flex flex-col h-[460px] items-start overflow-clip relative rounded-[28px] shadow-[0px_12px_32px_0px_rgba(20,23,28,0.14)] shrink-0 w-[500px]" data-node-id="220:1584" data-name="Hero right">
-            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgHeroRight} />
-            <div className="absolute h-[460px] left-0 top-0 w-[500px]" data-node-id="220:1586" data-name="Grid">
-              <div className="absolute inset-[-0.11%_0_0_0]"><img alt="" className="block max-w-none size-full" src={imgGrid} /></div>
-            </div>
-            <div className="[word-break:break-word] absolute bg-white content-stretch flex flex-col gap-[6px] items-start leading-[normal] left-[24px] overflow-clip px-[18px] py-[16px] rounded-[18px] shadow-[0px_12px_32px_0px_rgba(20,23,28,0.14)] top-[24px] w-[210px] whitespace-nowrap" data-node-id="220:1634" data-name="Float card - Asset Value">
-              <p className="font-['Inter:Bold'] font-bold not-italic relative shrink-0 text-[#8b939c] text-[10.5px] tracking-[0.21px]" data-node-id="220:1635">LOAN TO VALUE RATIO</p>
-              <p className="font-['Plus_Jakarta_Sans:ExtraBold'] font-extrabold relative shrink-0 text-[#034f5b] text-[21px]" data-node-id="220:1636">Up to 90% LTV</p>
-            </div>
+          <div className="bg-[#062530] content-stretch flex flex-col h-[460px] items-center justify-center overflow-clip relative rounded-[28px] shadow-[0px_12px_32px_0px_rgba(20,23,28,0.14)] shrink-0 w-[500px]" data-node-id="220:1584" data-name="Hero right">
+            <img alt="" className="block w-full h-full object-contain" src={imgGrid} />
           </div>
         </div>
         <div className="absolute bg-white content-stretch flex gap-[10px] h-[76px] items-center left-[1024px] overflow-clip pl-[16px] pr-[18px] py-[14px] rounded-[16px] shadow-[0px_12px_32px_0px_rgba(20,23,28,0.14)] top-[502px]" data-node-id="220:1637" data-name="Float card - Approved">

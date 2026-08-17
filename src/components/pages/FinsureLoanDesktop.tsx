@@ -6,8 +6,8 @@ const imgMdiInstagram = "https://www.figma.com/api/mcp/asset/20f93a26-360a-4ddf-
 const imgMdiLinkedin = "https://www.figma.com/api/mcp/asset/5ad102e8-ecb2-4323-984e-bcd965714e38";
 const imgFinbloomLogo1 = "https://www.figma.com/api/mcp/asset/58031313-2c8a-4365-a558-f7f513d644e3";
 const imgHeroRight = "https://www.figma.com/api/mcp/asset/b558b059-599d-42d0-b7a5-ac56dbd4b2c6";
-const imgTablerArrowDown = "https://www.figma.com/api/mcp/asset/29a6eaef-94fc-4b78-ab12-dac7ecc0992c";
-const imgGrid = "https://www.figma.com/api/mcp/asset/07647641-b79c-4169-a1d2-aca37b974f6b";
+const imgTablerArrowDown = "/img/tabler_arrow-down.svg";
+const imgGrid = "/img/Finsure_loan.svg";
 const imgMaterialSymbolsCheck = "https://www.figma.com/api/mcp/asset/ff51ef30-255a-4f92-bfe8-c00b55dc850a";
 
 function Footer({ className }: { className?: string }) {
@@ -146,15 +146,8 @@ export default function FinsureLoanDesktop() {
               <div className="relative shrink-0 size-[18px]" data-node-id="220:1326" data-name="tabler:arrow-down"><img alt="" className="absolute block inset-0 max-w-none size-full" src={imgTablerArrowDown} /></div>
             </a>
           </div>
-          <div className="bg-[#062530] content-stretch flex flex-col h-[460px] items-start overflow-clip relative rounded-[28px] shadow-[0px_12px_32px_0px_rgba(20,23,28,0.14)] shrink-0 w-[500px]" data-node-id="220:1328" data-name="Hero right">
-            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgHeroRight} />
-            <div className="absolute h-[460px] left-0 top-0 w-[500px]" data-node-id="220:1330" data-name="Grid">
-              <div className="absolute inset-[-0.11%_0_0_0]"><img alt="" className="block max-w-none size-full" src={imgGrid} /></div>
-            </div>
-            <div className="[word-break:break-word] absolute bg-white content-stretch flex flex-col gap-[6px] items-start leading-[normal] left-[24px] overflow-clip px-[18px] py-[16px] rounded-[18px] shadow-[0px_12px_32px_0px_rgba(20,23,28,0.14)] top-[24px] w-[210px] whitespace-nowrap" data-node-id="220:1378" data-name="Float card - Asset Value">
-              <p className="font-['Inter:Bold'] font-bold not-italic relative shrink-0 text-[#8b939c] text-[10.5px] tracking-[0.21px]" data-node-id="220:1379">PROTECTION CAPACITY</p>
-              <p className="font-['Plus_Jakarta_Sans:ExtraBold'] font-extrabold relative shrink-0 text-[#034f5b] text-[21px]" data-node-id="220:1380">₦20,000,000</p>
-            </div>
+          <div className="bg-[#062530] content-stretch flex flex-col h-[460px] items-center justify-center overflow-clip relative rounded-[28px] shadow-[0px_12px_32px_0px_rgba(20,23,28,0.14)] shrink-0 w-[500px]" data-node-id="220:1328" data-name="Hero right">
+            <img alt="" className="block w-full h-full object-contain" src={imgGrid} />
           </div>
         </div>
         <div className="absolute bg-white content-stretch flex gap-[10px] h-[76px] items-center left-[1024px] overflow-clip pl-[16px] pr-[18px] py-[14px] rounded-[16px] shadow-[0px_12px_32px_0px_rgba(20,23,28,0.14)] top-[502px]" data-node-id="220:1381" data-name="Float card - Approved">

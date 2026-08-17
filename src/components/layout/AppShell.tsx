@@ -280,14 +280,18 @@ export default function AppShell({ children }: { children: ReactNode }) {
               </p>
               <div className="mt-5 flex items-center gap-3" aria-label="Social links">
                 <a
-                  href="#"
+                  href="https://x.com/finbloomng?s=11"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label="X (Twitter)"
                   className="flex size-10 items-center justify-center rounded-full border border-white text-white/90 transition hover:bg-white hover:text-[#034f5b]"
                 >
                   <img src="/img/prime_twitter.svg" alt="Twitter" className="size-4" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.facebook.com/share/14ubWjRdVwk/?mibextid=wwXIfr"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label="Facebook"
                   className="flex size-10 items-center justify-center rounded-full border border-white text-white/90 transition hover:bg-white hover:text-[#034f5b]"
                 >
@@ -296,7 +300,9 @@ export default function AppShell({ children }: { children: ReactNode }) {
                   </svg>
                 </a>
                 <a
-                  href="#"
+                  href="https://www.instagram.com/finbloomcapital?igsh=cmkyOHBwYnh2a3Rz&utm_source=qr"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label="Instagram"
                   className="flex size-10 items-center justify-center rounded-full border border-white text-white/90 transition hover:bg-white hover:text-[#034f5b]"
                 >
@@ -307,7 +313,9 @@ export default function AppShell({ children }: { children: ReactNode }) {
                   </svg>
                 </a>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/posts/finbloom-capital_kyc-financialliteracy-digitalfinance-activity-7493956639276978176-FlDP?utm_source=share&utm_medium=member_ios&rcm=ACoAADwxkhUBhd9rp5aIlD_Mp63Q4er-nL-CN9I"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label="LinkedIn"
                   className="flex size-10 items-center justify-center rounded-full border border-white text-white/90 transition hover:bg-white hover:text-[#034f5b]"
                 >

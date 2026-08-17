@@ -1,6 +1,6 @@
 const imgFinbloomLogo1 = "https://www.figma.com/api/mcp/asset/96245253-4abe-4d5c-8890-02b02c420db2";
-const imgTablerArrowDown = "https://www.figma.com/api/mcp/asset/fe48e725-c30f-4328-b5d6-bf93e5bfa9b1";
-const imgGrid = "https://www.figma.com/api/mcp/asset/2592abc0-47fa-4eb6-835f-c627c9747b41";
+const imgTablerArrowDown = "/img/tabler_arrow-down.svg";
+const imgGrid = "/img/Hero right.svg";
 const imgCheck = "https://www.figma.com/api/mcp/asset/3a763a7b-8267-4537-a6c6-410b5b09063c";
 const imgShieldCheck = "https://www.figma.com/api/mcp/asset/7f425470-ae91-4033-b0bd-2f69b98554f1";
 const imgFinbloomLogoBackground = "https://www.figma.com/api/mcp/asset/8028082a-b90b-4b8c-909f-5a6512693ba5";
@@ -53,43 +53,8 @@ export default function SmeGrowthLoanDesktop() {
             </a>
           </div>
           <div className="content-stretch flex flex-col gap-[24px] items-start overflow-clip relative shrink-0 w-[520px]" data-node-id="166:24" data-name="Hero right">
-            <div className="bg-[#062530] content-stretch flex flex-col h-[420px] items-start overflow-clip relative rounded-[28px] shadow-[0px_12px_32px_0px_rgba(20,23,28,0.14)] shrink-0 w-full" data-node-id="190:14" data-name="Working capital dashboard illustration">
-              <div className="absolute h-[420px] left-0 top-0 w-[520px]" data-node-id="190:15" data-name="Grid"><img alt="" className="absolute block inset-0 max-w-none size-full" src={imgGrid} /></div>
-              <div className="absolute bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.07)] border-solid content-stretch flex flex-col gap-[12px] h-[160px] items-start left-[32px] overflow-clip px-[16px] py-[14px] rounded-[16px] top-[240px] w-[456px]" data-node-id="190:61" data-name="bar-chart">
-                <div className="content-stretch flex items-center justify-between relative shrink-0 w-full" data-node-id="190:62" data-name="chart-header">
-                  <p className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[normal] not-italic relative shrink-0 text-[12px] text-[rgba(255,255,255,0.8)] whitespace-nowrap" data-node-id="190:63">Cash flow forecast</p>
-                  <div className="bg-[#e5eff1] content-stretch flex items-center px-[10px] py-[6px] relative rounded-[100px] shrink-0" data-node-id="190:64" data-name="chip">
-                    <p className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[normal] not-italic relative shrink-0 text-[#046675] text-[11px] whitespace-nowrap" data-node-id="190:65">+12%</p>
-                  </div>
-                </div>
-                <div className="content-stretch flex flex-[1_0_0] gap-[12px] items-end min-h-px relative w-full" data-node-id="190:66" data-name="bars">
-                  <div className="bg-gradient-to-b from-[#046675] h-[44px] relative rounded-[5px] shrink-0 to-[#07bfdb] to-[90.91%] w-[40px]" data-node-id="190:67" data-name="Rectangle" />
-                  <div className="bg-gradient-to-b from-[#046675] h-[68px] relative rounded-[5px] shrink-0 to-[#07bfdb] to-[90.91%] w-[40px]" data-node-id="190:68" data-name="Rectangle" />
-                  <div className="bg-gradient-to-b from-[#046675] h-[52px] relative rounded-[5px] shrink-0 to-[#07bfdb] to-[90.91%] w-[40px]" data-node-id="190:69" data-name="Rectangle" />
-                  <div className="bg-gradient-to-b from-[#046675] h-[84px] relative rounded-[5px] shrink-0 to-[#07bfdb] to-[90.91%] w-[40px]" data-node-id="190:70" data-name="Rectangle" />
-                  <div className="bg-gradient-to-b from-[#046675] h-[62px] relative rounded-[5px] shrink-0 to-[#07bfdb] to-[90.91%] w-[40px]" data-node-id="190:71" data-name="Rectangle" />
-                  <div className="bg-gradient-to-b from-[#046675] h-[96px] relative rounded-[5px] shrink-0 to-[#07bfdb] to-[90.91%] w-[40px]" data-node-id="190:72" data-name="Rectangle" />
-                  <div className="bg-gradient-to-b from-[#046675] h-[74px] relative rounded-[5px] shrink-0 to-[#07bfdb] to-[90.91%] w-[40px]" data-node-id="190:73" data-name="Rectangle" />
-                  <div className="bg-gradient-to-b from-[#046675] h-[58px] relative rounded-[5px] shrink-0 to-[#07bfdb] to-[90.91%] w-[40px]" data-node-id="190:74" data-name="Rectangle" />
-                </div>
-              </div>
-              <div className="[word-break:break-word] absolute bg-white content-stretch flex flex-col gap-[6px] items-start leading-[normal] left-[12px] overflow-clip px-[18px] py-[16px] rounded-[18px] shadow-[0px_12px_32px_0px_rgba(20,23,28,0.14)] top-[12px] w-[196px] whitespace-nowrap" data-node-id="190:75" data-name="Float card A">
-                <p className="font-['Inter:Semi_Bold'] font-semibold not-italic relative shrink-0 text-[#8b939c] text-[10.5px] tracking-[0.21px]" data-node-id="190:76">AVAILABLE GROWTH FACILITY</p>
-                <p className="font-['Plus_Jakarta_Sans:ExtraBold'] font-extrabold relative shrink-0 text-[#062530] text-[21px]" data-node-id="190:77">₦5,000,000</p>
-              </div>
-              <div className="absolute bg-white content-stretch flex gap-[10px] h-[76px] items-center left-[294px] overflow-clip pl-[16px] pr-[18px] py-[14px] rounded-[16px] shadow-[0px_12px_32px_0px_rgba(20,23,28,0.14)] top-[342px]" data-node-id="190:78" data-name="Float card B">
-                <div className="bg-[var(--teal\/accent-soft,#e5eff1)] content-stretch flex flex-col items-center justify-center relative rounded-[100px] shrink-0 size-[24px]" data-node-id="190:79" data-name="status-icon">
-                  <div className="relative shrink-0 size-[12px]" data-node-id="190:88" data-name="check"><img alt="" className="absolute block inset-0 max-w-none size-full" src={imgCheck} /></div>
-                </div>
-                <div className="[word-break:break-word] content-stretch flex flex-col gap-[2px] items-start leading-[normal] not-italic overflow-clip relative shrink-0 whitespace-nowrap" data-node-id="190:81" data-name="cardB text">
-                  <p className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-[#062530] text-[13px]" data-node-id="190:82">Application received</p>
-                  <p className="font-['Inter:Regular'] font-normal relative shrink-0 text-[#55606b] text-[11.5px]" data-node-id="190:83">{`We'll keep you updated`}</p>
-                </div>
-              </div>
-              <div className="absolute bg-[rgba(255,255,255,0.06)] border border-[rgba(255,255,255,0.08)] border-solid content-stretch flex gap-[8px] items-center left-[32px] px-[12px] py-[10px] rounded-[14px] top-[156px]" data-node-id="190:84" data-name="Float chip">
-                <div className="relative shrink-0 size-[16px]" data-node-id="190:91" data-name="shield-check"><img alt="" className="absolute block inset-0 max-w-none size-full" src={imgShieldCheck} /></div>
-                <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[12px] text-[rgba(255,255,255,0.8)] whitespace-nowrap" data-node-id="190:86">Secure application</p>
-              </div>
+            <div className="bg-[#062530] content-stretch flex flex-col h-[420px] items-center justify-center overflow-clip relative rounded-[28px] shadow-[0px_12px_32px_0px_rgba(20,23,28,0.14)] shrink-0 w-full" data-node-id="190:14" data-name="Working capital dashboard illustration">
+              <img alt="" className="block w-full h-full object-contain" src={imgGrid} />
             </div>
           </div>
         </div>
