@@ -70,10 +70,13 @@ function TestimonialsCarousel() {
     []
   );
   const [visible, setVisible] = useState(3);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     function update() {
       const w = typeof window !== 'undefined' ? window.innerWidth : 1280;
+      const mobile = w < 768;
+      setIsMobile(mobile);
       if (w >= 1024) setVisible(visibleMap.lg);
       else if (w >= 768) setVisible(visibleMap.md);
       else setVisible(visibleMap.base);
@@ -93,17 +96,19 @@ function TestimonialsCarousel() {
   }, [pages]);
 
   useEffect(() => {
+    if (isMobile) return;
     const id = setInterval(() => {
       if (!hoverRef.current) {
         setPage((p) => (p + 1) % pages);
       }
     }, 5000);
     return () => clearInterval(id);
-  }, [pages]);
+  }, [pages, isMobile]);
 
   useEffect(() => {
-    if (page >= pages) setPage(0);
-  }, [pages, page]);
+    if (isMobile) setPage(0);
+    else if (page >= pages) setPage(0);
+  }, [pages, page, isMobile]);
 
   const cardBasis = `calc((100% - ${visible - 1} * 20px) / ${visible})`;
   const stepSize = `calc(${cardBasis} + 20px)`;
@@ -202,13 +207,13 @@ function TestimonialsCarousel() {
           type="button"
           aria-label="Previous testimonial"
           onClick={prev}
-          className="inline-flex items-center justify-center rounded-full border border-[#e7e5e1] bg-white shadow-sm text-[#034f5b] size-9 md:hidden"
+          className="hidden items-center justify-center rounded-full border border-[#e7e5e1] bg-white shadow-sm text-[#034f5b] size-9"
         >
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <path d="M15 18l-6-6 6-6" />
           </svg>
         </button>
-        <div className="content-stretch flex gap-[8px] items-center overflow-clip relative shrink-0" data-node-id="32:37" data-name="dots">
+        <div className="content-stretch hidden md:flex gap-[8px] items-center overflow-clip relative shrink-0" data-node-id="32:37" data-name="dots">
           {Array.from({ length: pages }).map((_, i) => (
             <button
               key={i}
@@ -227,7 +232,7 @@ function TestimonialsCarousel() {
           type="button"
           aria-label="Next testimonial"
           onClick={next}
-          className="inline-flex items-center justify-center rounded-full border border-[#e7e5e1] bg-white shadow-sm text-[#034f5b] size-9 md:hidden"
+          className="hidden items-center justify-center rounded-full border border-[#e7e5e1] bg-white shadow-sm text-[#034f5b] size-9"
         >
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <path d="M9 18l6-6-6-6" />
