@@ -66,20 +66,17 @@ function TestimonialsCarousel() {
   const total = testimonials.length;
 
   const visibleMap = useMemo(
-    () => ({ base: 1, sm: 1, md: 2, lg: 3 }),
+    () => ({ base: 1, sm: 1, md: 1, lg: 1 }),
     []
   );
-  const [visible, setVisible] = useState(3);
+  const [visible, setVisible] = useState(1);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     function update() {
       const w = typeof window !== 'undefined' ? window.innerWidth : 1280;
-      const mobile = w < 768;
-      setIsMobile(mobile);
-      if (w >= 1024) setVisible(visibleMap.lg);
-      else if (w >= 768) setVisible(visibleMap.md);
-      else setVisible(visibleMap.base);
+      setIsMobile(w < 768);
+      setVisible(1);
     }
     update();
     window.addEventListener('resize', update);
@@ -96,19 +93,17 @@ function TestimonialsCarousel() {
   }, [pages]);
 
   useEffect(() => {
-    if (isMobile) return;
     const id = setInterval(() => {
       if (!hoverRef.current) {
         setPage((p) => (p + 1) % pages);
       }
     }, 5000);
     return () => clearInterval(id);
-  }, [pages, isMobile]);
+  }, [pages]);
 
   useEffect(() => {
-    if (isMobile) setPage(0);
-    else if (page >= pages) setPage(0);
-  }, [pages, page, isMobile]);
+    if (page >= pages) setPage(0);
+  }, [pages, page]);
 
   const cardBasis = `calc((100% - ${visible - 1} * 20px) / ${visible})`;
   const stepSize = `calc(${cardBasis} + 20px)`;
@@ -136,7 +131,7 @@ function TestimonialsCarousel() {
           type="button"
           aria-label="Previous testimonial"
           onClick={prev}
-          className="absolute left-0 top-1/2 z-10 hidden -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-[#e7e5e1] bg-white shadow-md text-[#034f5b] transition hover:bg-[#034f5b] hover:text-white md:inline-flex size-10"
+          className="absolute left-0 top-1/2 z-10 hidden -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-[#e7e5e1] bg-white shadow-md text-[#034f5b] transition hover:bg-[#034f5b] hover:text-white md:inline-flex lg:inline-flex size-10"
         >
           <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <path d="M15 18l-6-6 6-6" />
@@ -151,7 +146,7 @@ function TestimonialsCarousel() {
             {testimonials.map((t, i) => (
               <article
                 key={i}
-                className="bg-[#e5eff1] content-stretch flex h-full flex-col gap-[18px] items-start overflow-clip px-[26px] py-[28px] relative rounded-[18px] shrink-0 w-full md:w-1/2 lg:w-1/3"
+                className="bg-[#e5eff1] content-stretch flex h-full flex-col gap-[18px] items-start overflow-clip px-[26px] py-[28px] relative rounded-[18px] shrink-0 w-full"
                 style={{
                   flex: `0 0 ${cardBasis}`,
                   width: cardBasis,
@@ -193,7 +188,7 @@ function TestimonialsCarousel() {
           type="button"
           aria-label="Next testimonial"
           onClick={next}
-          className="absolute right-0 top-1/2 z-10 hidden translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-[#e7e5e1] bg-white shadow-md text-[#034f5b] transition hover:bg-[#034f5b] hover:text-white md:inline-flex size-10"
+          className="absolute right-0 top-1/2 z-10 hidden translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-[#e7e5e1] bg-white shadow-md text-[#034f5b] transition hover:bg-[#034f5b] hover:text-white md:inline-flex lg:inline-flex size-10"
         >
           <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <path d="M9 18l6-6-6-6" />
@@ -207,13 +202,13 @@ function TestimonialsCarousel() {
           type="button"
           aria-label="Previous testimonial"
           onClick={prev}
-          className="hidden items-center justify-center rounded-full border border-[#e7e5e1] bg-white shadow-sm text-[#034f5b] size-9"
+          className="inline-flex items-center justify-center rounded-full border border-[#e7e5e1] bg-white shadow-sm text-[#034f5b] size-9 md:hidden"
         >
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <path d="M15 18l-6-6 6-6" />
           </svg>
         </button>
-        <div className="content-stretch hidden md:flex gap-[8px] items-center overflow-clip relative shrink-0" data-node-id="32:37" data-name="dots">
+        <div className="content-stretch flex gap-[8px] items-center overflow-clip relative shrink-0" data-node-id="32:37" data-name="dots">
           {Array.from({ length: pages }).map((_, i) => (
             <button
               key={i}
@@ -232,7 +227,7 @@ function TestimonialsCarousel() {
           type="button"
           aria-label="Next testimonial"
           onClick={next}
-          className="hidden items-center justify-center rounded-full border border-[#e7e5e1] bg-white shadow-sm text-[#034f5b] size-9"
+          className="inline-flex items-center justify-center rounded-full border border-[#e7e5e1] bg-white shadow-sm text-[#034f5b] size-9 md:hidden"
         >
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <path d="M9 18l6-6-6-6" />
