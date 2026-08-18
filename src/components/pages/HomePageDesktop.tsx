@@ -138,15 +138,15 @@ function TestimonialsCarousel() {
           </svg>
         </button>
 
-        <div className="overflow-hidden px-4 md:px-10 lg:px-14">
+        <div className="overflow-hidden md:px-10 lg:px-14">
           <div
-            className="flex gap-[20px] transition-transform duration-700 ease-out"
+            className="flex items-stretch gap-[20px] transition-transform duration-700 ease-out"
             style={trackStyle}
           >
             {testimonials.map((t, i) => (
               <article
                 key={i}
-                className="bg-[#e5eff1] content-stretch flex flex-col gap-[18px] items-start overflow-clip px-[26px] py-[28px] relative rounded-[18px] shrink-0 w-full md:w-1/2 lg:w-1/3"
+                className="bg-[#e5eff1] content-stretch flex h-full flex-col gap-[18px] items-start overflow-clip px-[26px] py-[28px] relative rounded-[18px] shrink-0 w-full md:w-1/2 lg:w-1/3"
                 style={{
                   flex: `0 0 ${cardBasis}`,
                   width: cardBasis,
@@ -158,7 +158,7 @@ function TestimonialsCarousel() {
                 <p className="font-['Plus_Jakarta_Sans:ExtraBold'] font-extrabold leading-[normal] relative shrink-0 text-[#046675] text-[26px] whitespace-nowrap">
                   &ldquo;
                 </p>
-                <p className="font-['Inter:Regular'] font-normal leading-[1.55] not-italic relative shrink-0 text-[#062530] text-[14px] w-full max-w-[320px]">
+                <p className="font-['Inter:Regular'] font-normal leading-[1.55] not-italic relative flex-1 text-[#062530] text-[14px] w-full">
                   {t.quote}
                 </p>
                 <div className="content-stretch flex gap-[12px] items-center overflow-clip relative shrink-0" data-name="person">
