@@ -105,8 +105,10 @@ function TestimonialsCarousel() {
     if (page >= pages) setPage(0);
   }, [pages, page]);
 
+  const cardBasis = `calc((100% - ${visible - 1} * 20px) / ${visible})`;
+  const stepSize = `calc(${cardBasis} + 20px)`;
   const trackStyle = {
-    transform: `translateX(calc(-1 * ${page} * ((100% - ${visible - 1} * 20px) / ${visible} + 20px)))`
+    transform: `translateX(calc(-1 * ${page} * ${stepSize}))`
   };
 
   return (
@@ -144,11 +146,11 @@ function TestimonialsCarousel() {
             {testimonials.map((t, i) => (
               <article
                 key={i}
-                className="bg-[#e5eff1] content-stretch flex flex-col gap-[18px] items-start overflow-clip px-[26px] py-[28px] relative rounded-[18px] shrink-0"
+                className="bg-[#e5eff1] content-stretch flex flex-col gap-[18px] items-start overflow-clip px-[26px] py-[28px] relative rounded-[18px] shrink-0 w-full md:w-1/2 lg:w-1/3"
                 style={{
-                  flex: `0 0 calc((100% - ${visible - 1} * 20px) / ${visible})`,
-                  width: `calc((100% - ${visible - 1} * 20px) / ${visible})`,
-                  minWidth: `calc((100% - ${visible - 1} * 20px) / ${visible})`,
+                  flex: `0 0 ${cardBasis}`,
+                  width: cardBasis,
+                  minWidth: cardBasis,
                 }}
                 data-node-id={`32:tc-${i}`}
                 data-name="Testimonial card"
