@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import DangoteIpoCta from '../shared/DangoteIpoCta';
 
 const imgMaterialSymbolsLightCheck = '/img/material-symbols-light_check.svg';
 const imgMaterialSymbolsLightCheck1 = '/img/material-symbols-light_check.svg';
@@ -550,6 +551,7 @@ export default function HomePageDesktop() {
           </div>
         </div>
       </div>
+      <DangoteIpoCta />
       <TestimonialsCarousel />
       <div className="bg-[#fdf6e0] content-stretch flex flex-col items-start overflow-clip px-[80px] py-[64px] relative shrink-0 w-full" data-node-id="32:45" data-name="Financial Partners">
         <div className="content-stretch flex flex-col gap-[14px] items-start overflow-clip relative shrink-0 w-[640px]" data-node-id="32:46" data-name="Section head">
